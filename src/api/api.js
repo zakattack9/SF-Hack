@@ -1,8 +1,8 @@
-const API_KEY = 'ASU378h8!f41G!hu7';
-
 // import Statefarm location builder and SF data array
 import { sfLocationData, locationBuilder } from './data.js';
 import { buildChart } from './chart.js';
+
+const API_KEY = 'ASU378h8!f41G!hu7';
 
 // States, Counties, Cities to pull power outage data from
 const SF_LOCATIONS_SORTED = locationBuilder();
