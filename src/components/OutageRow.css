@@ -1,0 +1,40 @@
+
+
+.title {
+    
+    font-size: 50pt;
+    font-weight: bolder;
+    letter-spacing: 1mm;
+    text-align: left;
+    color: white;
+
+}
+
+.office {
+    font-size: 20pt;
+    color:white;
+    text-align: left;
+    margin: 0;
+}
+
+
+.time {
+    margin: 0;
+    color: rgb(66, 66, 66);
+    text-align: left;
+    
+}
+
+.location {
+
+    margin: 0;
+    color: gray;
+    text-align: left;
+}
+
+
+.userOutageNotification{
+    
+    margin-top: 100pt;
+
+}
