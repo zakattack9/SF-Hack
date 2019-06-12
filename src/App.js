@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import WeatherRow from './components/WeatherRow';
+import HomeMain from './components/HomeMain';
+import HomeNotifications from './components/HomeNotifications';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HomeMain/>
+      <HomeNotifications/>
+      
+      {/* <WeatherRow title = "Weather Updates" location = "PHOENIX, AZ" time = "8:03" weatherStatus = "Heavy Flooding" description = "This is a description about weather status which is very important..." /> */}
     </div>
   );
 }
