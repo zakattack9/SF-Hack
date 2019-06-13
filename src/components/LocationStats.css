@@ -1,0 +1,97 @@
+.LocationStatsWrapper {
+  width: 70%;
+  height: 100%;
+  font-size: 0.9em;
+  margin: 0 auto;
+  position: relative;
+}
+
+.LocationStatsWrapper .searchBar {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.LocationStatsWrapper .stats {
+  width: 50%;
+  display: inline-block;
+  margin-right: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.locationInfo .county {
+  font-size: 1em;
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+}
+
+.locationInfo .locationName {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.locationInfo .city {
+  font-size: 1.15em;
+  font-weight: bold;
+  color: #767676;
+}
+
+.locationData {
+  margin: 1.7em 0;
+}
+
+.locationData table {
+  width: 100%;
+}
+
+.locationData table tr td {
+  padding: 0;
+  width: 50%;
+}
+
+.stats hr {
+  border: none;
+  width: 85%;
+  height: 1px;
+  color: #3D3D3D; /* old IE */
+  background-color: #3D3D3D; 
+  display: inline-block;
+  margin-bottom: 1.5em;
+  margin-right: auto;
+}
+
+.powerOutageData .powerOutageTitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #B3B3B3;
+}
+
+.powerOutageData table {
+  width: 100%;
+}
+
+.powerOutageData table tr td {
+  padding: 0;
+  width: 50%;
+}
+
+.category {
+  font-weight: bold;
+  color: #7D7D7D;
+  margin-top: 1em;
+}
+
+.stats .reportBtn {
+  position: relative;
+  top: 2em;
+  left: 0;
+}
+
+.LocationStatsWrapper .outageGraph {
+  width: 50%;
+}
