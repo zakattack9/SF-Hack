@@ -10,20 +10,21 @@
   height: 1px;
   color: #3D3D3D; /* old IE */
   background-color: #3D3D3D; /* Modern Browsers */
+  margin-bottom: 2em;
 }
 
-.titleWrapper {
+.WeatherRow .titleWrapper {
   position: relative;
 }
 
 .mainTitle {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
   letter-spacing: 0.1em;
   margin: 0;
-  margin-bottom: 8%;
+  margin-bottom: 6%;
 }
 
 .cloudIcon {
@@ -44,7 +45,7 @@
   height: 1em;
 }
 
-.location {
+.groupLocationTime .location {
   font-size: 0.6em;
   text-transform: uppercase;
   text-align: left;
@@ -55,7 +56,7 @@
   font-weight: bold;
 }
 
-.time {
+.groupLocationTime .time {
   font-size: 0.7em;
   text-align: right;
   color: #5c5c5c;
@@ -64,12 +65,12 @@
   display: inline-block;
 }
 
-.weatherTitle {
+.WeatherNotifications .weatherTitle {
   font-size: 1em;
   margin-bottom: 3px;
 }
 
-.description {
+.WeatherNotifications .description {
   font-size: 0.77em;
 }
 
@@ -79,12 +80,4 @@
   color: #808080;
   font-style: italic; 
   margin-bottom: 6%;
-}
-
-
-
-
-
-
-
- 
+} 

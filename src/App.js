@@ -9,7 +9,7 @@ function App() {
       <HomeMain/>
       <HomeNotifications/>
     </div>
-  );
+  );  
 }
 
 export default App;
