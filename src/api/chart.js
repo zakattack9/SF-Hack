@@ -91,6 +91,8 @@ export function buildChart(data) {
         case "Very High":
           riskColor = "#FF6969";
           break;
+        default:
+          riskColor = "#A4E6A2";
       }
       return riskColor;
     })

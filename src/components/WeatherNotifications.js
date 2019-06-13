@@ -1,20 +1,18 @@
 import React from 'react';
 
-function WeatherNotifications(props) {
-    return (
-        <div className = 'weatherNotifications'>
-            
-            <div className = 'groupLocationTime'>
-                <h4 className = 'location'>{props.location}</h4>     
-                <h4 className = 'time'>{props.time}</h4>
-            </div>
+const WeatherNotifications = props => {
+  return (
+    <div className='WeatherNotifications'>
+      <div className='groupLocationTime'>
+        <div className='location'>{props.location}</div>
+        <div className='time'>{props.time}</div>
+      </div>
 
-                <h4 className = 'weatherTitle'>{props.weatherTitle}</h4>
-            
-         
-            <h6 className = 'description'>{props.description}</h6>
-        </div>
-    )
+      <div className='weatherTitle'>{props.weatherTitle}</div>
+
+      <div className='description'>{props.description}</div>
+    </div>
+  )
 }
 
 export default WeatherNotifications;
