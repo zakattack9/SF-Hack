@@ -1,9 +1,10 @@
 import React from 'react';
-
+import SearchBar from './SearchBar';
 
 function ReportedOutagesNotifications(props) {
     return (
     <div className = 'wrapNotification'>
+        <SearchBar  width = "20%" />
         <div className = 'outageNotifications '>
             
             <div className = 'groupLocationTime'>

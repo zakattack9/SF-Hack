@@ -7,8 +7,9 @@ import ReportedOutagesRow from './components/ReportedOutagesRow';
 function App() {
   return (
     <div className="App">
-      <HomeMain/>
-      <HomeNotifications/>
+      {/* <HomeMain/>
+      <HomeNotifications/> */}
+      <ReportedOutagesRow/>
     </div>
   );
 }
