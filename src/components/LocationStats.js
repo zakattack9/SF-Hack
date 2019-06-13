@@ -2,7 +2,7 @@ import React from 'react';
 import './LocationStats.css';
 import SearchBar from './SearchBar';
 import ReportButton from './ReportButton';
-import PieChart from './PieChart';
+// import PieChart from './PieChart';
 
 class LocationStats extends React.Component {
 
@@ -21,11 +21,11 @@ class LocationStats extends React.Component {
             <table>
               <tr>
                 <td>Status:</td>
-                <td>Potentially Down</td>
+                <td className='green'>Good</td>
               </tr>
               <tr>
                 <td>Power Outage Risk:</td>
-                <td>Medium</td>
+                <td className='green'>Medium</td>
               </tr>
               <tr>
                 <td>Last Updated:</td>
@@ -47,29 +47,29 @@ class LocationStats extends React.Component {
                 <div className="category">State</div>
                 <tr>
                   <td>Population Tracked:</td>
-                  <td>7.1 Million</td>
+                  <td>731,525</td>
                 </tr>
                 <tr>
                   <td>Outages:</td>
-                  <td>35,729</td>
+                  <td>117</td>
                 </tr>
                 <div className="category">County</div>
                 <tr>
                   <td>Population Tracked:</td>
-                  <td>4.3 Million</td>
+                  <td>328,766</td>
                 </tr>
                 <tr>
                   <td>Outages:</td>
-                  <td>7,560</td>
+                  <td>96</td>
                 </tr>
                 <div className="category">City</div>
                 <tr>
                   <td>Population Tracked:</td>
-                  <td>185,373</td>
+                  <td>18,828</td>
                 </tr>
                 <tr>
                   <td>Outages:</td>
-                  <td>2,039</td>
+                  <td>0</td>
                 </tr>
               </tbody>
             </table>
@@ -78,9 +78,9 @@ class LocationStats extends React.Component {
           <ReportButton />
         </div>
 
-        <div className="outageGraph">
-          {/* <PieChart /> */}
-        </div>
+        {/* <div className="outageGraph">
+
+        </div> */}
       </div>
     );
   };

@@ -5,7 +5,7 @@ const WeatherNotifications = props => {
     <div className='WeatherNotifications'>
       <div className='groupLocationTime'>
         <div className='location'>{props.location}</div>
-        <div className='time'>{props.time}</div>
+        <div className='weatherTime'>{props.time}</div>
       </div>
 
       <div className='weatherTitle'>{props.weatherTitle}</div>

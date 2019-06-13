@@ -3,6 +3,7 @@ import './OutageRow.css';
 import UserOutageNotification from './UserOutageNotification';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const OutageRow = props => {
   return (
@@ -16,7 +17,12 @@ const OutageRow = props => {
       <UserOutageNotification time='2:05 pm' office='Marina Heights' location='Phoenix, AZ' />
       <UserOutageNotification time='6:03 am' office='Dallas Hub' location='Dallas, TX' />
       <UserOutageNotification time='5:45 am' office='Atlanta Hub' location='Atlanta, GA' />
-      <div className="viewAll">View All</div>
+
+      <div className="viewAll">
+        <Link to="/reports">
+          View All
+        </Link>
+      </div>
     </div>
   )
 }

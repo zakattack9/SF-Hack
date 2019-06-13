@@ -1,6 +1,7 @@
 import React from 'react';
 import * as d3 from "d3";
 import { getPowerOutageData } from  '../api/api';
+import { Link } from 'react-router-dom';
 
 class BubbleChart extends React.Component {
   componentDidMount() {
@@ -139,7 +140,7 @@ class BubbleChart extends React.Component {
   }
 
   render() {
-    return <div className="BubbleChart"></div>;
+    return <Link to="/location"><div className="BubbleChart"></div></Link>;
   };
 }
 

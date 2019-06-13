@@ -56,7 +56,7 @@
   font-weight: bold;
 }
 
-.groupLocationTime .time {
+.groupLocationTime .weatherTime {
   font-size: 0.7em;
   text-align: right;
   color: #5c5c5c;
@@ -81,3 +81,8 @@
   font-style: italic; 
   margin-bottom: 6%;
 } 
+
+.viewAll a {
+  text-decoration: none;
+  color: #808080;
+}

@@ -4,6 +4,7 @@
     text-align: center;
    
   }
+
 .location {
     font-size: 10px;
     color: #39393d;
@@ -15,7 +16,8 @@
     margin-bottom: 0;
     text-align: left;   
 }
-.time {
+
+.groupLocationTime .weatherTime {
     margin-top: 20px;
     text-align: left;
     font-size: 10px;
