@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import WeatherRow from './components/WeatherRow';
 import HomeMain from './components/HomeMain';
 import HomeNotifications from './components/HomeNotifications';
 import ReportedOutagesRow from './components/ReportedOutagesRow';
@@ -8,11 +7,8 @@ import ReportedOutagesRow from './components/ReportedOutagesRow';
 function App() {
   return (
     <div className="App">
-      {/* <HomeMain/>
-      <HomeNotifications/> */}
-      {/* <WeatherRow/> */}
-      <ReportedOutagesRow/>
-      {/* <WeatherRow title = "Weather Updates" location = "PHOENIX, AZ" time = "8:03" weatherStatus = "Heavy Flooding" description = "This is a description about weather status which is very important..." /> */}
+      <HomeMain/>
+      <HomeNotifications/>
     </div>
   );
 }
