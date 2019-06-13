@@ -1,40 +1,57 @@
-
-
-.title {
-    
-    font-size: 50pt;
-    font-weight: bolder;
-    letter-spacing: 1mm;
-    text-align: left;
-    color: white;
-
+.OutageRow {
+  position: relative;
+  top: 4.6%;
+  height: auto;
+  padding-right: 3em;
 }
 
-.office {
-    font-size: 20pt;
-    color:white;
-    text-align: left;
-    margin: 0;
+.OutageRow .titleWrapper {
+  position: relative;
 }
 
-
-.time {
-    margin: 0;
-    color: rgb(66, 66, 66);
-    text-align: left;
-    
+.mainTitle {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 0.1em;
+  margin: 0;
+  margin-bottom: 6%;
 }
 
-.location {
-
-    margin: 0;
-    color: gray;
-    text-align: left;
+.boltIcon {
+  color: #FFD227;
+  position: absolute;
+  right: 0;
+  top: 1em;
 }
 
-
-.userOutageNotification{
-
-    margin-top: 100pt;
-
+.UserOutageNotification {
+  font-size: 1em;
+  margin-bottom: 10%;
 }
+
+.UserOutageNotification .time {
+  font-size: 0.8em;
+  color: #5c5c5c;
+  text-align: left;
+  display: inline-block;
+}
+
+.UserOutageNotification .office {
+  font-size: 1em;
+  color:white;
+}
+
+.UserOutageNotification .location {
+  font-size: 0.6em;
+  text-transform: uppercase;
+  text-align: left;
+  color: gray;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 0.3em;
+}
+
