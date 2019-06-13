@@ -6,17 +6,15 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1D1D1D;
-<<<<<<< HEAD
+
   font-family: 'Montserrat', sans-serif;
-}
-=======
   color: white;
 }
+  
+
 
 #root {
   height: 100%;
   width: 100%;
 }
 
-  
->>>>>>> 3615215bcc1ab6d098a040e09d5a3596c7fb100e
