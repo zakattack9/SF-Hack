@@ -13,8 +13,8 @@ const WeatherRow = props => {
           <FontAwesomeIcon icon={faCloud} size="lg"/>
         </div>
       </div>
-      <WeatherNotifications location='Phoenix, AZ' time='8:03 pm' weatherTitle='Heavy Flooding' description="Accuweather has reported heavy rain for the area of Phoenix" />
-      <WeatherNotifications location='Bloomington, IL' time='5:30 am' weatherTitle='Strong Winds' description="Accuweather has reported heavy rain for the area of Phoenix" />
+      <WeatherNotifications location='Phoenix, AZ' time='8:03 pm' weatherTitle='Heavy Flooding' description="OpenWeatherMap has reported heavy rain for the area of Phoenix" />
+      <WeatherNotifications location='Bloomington, IL' time='5:30 am' weatherTitle='Strong Winds' description="OpenWeatherMap has reported strong winds for the area of Bloomington" />
       <div className="viewAll">View All</div>
       <hr/>
     </div>

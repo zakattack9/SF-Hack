@@ -14,7 +14,7 @@ const OutageRow = props => {
         </div>
       </div>
       <UserOutageNotification time='2:05 pm' office='Marina Heights' location='Phoenix, AZ' />
-      <UserOutageNotification time='6:03 am' office='Statefarm Texas' location='Dallas, TX' />
+      <UserOutageNotification time='6:03 am' office='Dallas Hub' location='Dallas, TX' />
       <UserOutageNotification time='5:45 am' office='Atlanta Hub' location='Atlanta, GA' />
       <div className="viewAll">View All</div>
     </div>

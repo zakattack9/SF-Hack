@@ -9,7 +9,7 @@
   position: relative;
 }
 
-.mainTitle {
+.OutageRow .titleWrapper .mainTitle {
   font-size: 1.1em;
   font-weight: bold;
   text-transform: uppercase;
