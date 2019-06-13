@@ -70,4 +70,3 @@ function getWeather(){
         return returnMap
     })
 }
-getWeather()
