@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+ 
   height: 100%;
   padding: 0;
 }
@@ -21,13 +21,9 @@
   color: white;
 }
 
-.App div {
-  height: 100%;
-}
-/* 
 .background {
   margin: 0;
-} */
+}
 
 .App-link {
   color: #61dafb;

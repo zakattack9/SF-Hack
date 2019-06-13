@@ -1,0 +1,62 @@
+.mainTitle {
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 10px;
+  }
+.location {
+    font-size: 10px;
+    color: #39393d;
+    position: relative;
+    /* left: 0; */
+    display: inline;
+    margin: 0px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+    
+}
+.time {
+    text-align: right;
+    /* margin: 200px; */
+    font-size: 10px;
+
+    color: #39393d;
+    /* text-align: left; */
+    display: inline;
+    position: relative;
+    left: 100px;
+}
+
+.weatherTitle {
+    margin: 0px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.description {
+    margin: 0;
+    text-align: left;
+    /* right: 0; */
+}
+.weatherNotifications {
+    margin-bottom: 100pt;
+    padding-left: 10px;
+    width: 200px;
+    
+}
+
+.groupLocationTime {
+
+    margin-bottom: 5px;
+    text-align: left;
+    position: left;
+    width: 100%;
+
+    
+}
+
+
+
+
+
+
+ 
