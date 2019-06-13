@@ -11,7 +11,7 @@ function App() {
       <HomeNotifications/> */}
       <ReportedOutagesRow/>
     </div>
-  );
+  );  
 }
 
 export default App;

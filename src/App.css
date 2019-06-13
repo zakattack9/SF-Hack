@@ -8,13 +8,16 @@
   /* background-color: aqua; */
   width: 70%;
   height: 100%;
-  display: inline-block;
+  float: left;
   position: relative;
+  /* display: inline-block; */
 }
 
 .HomeNotifications {
   /* background: yellow; */
   width: 30%;
   height: 100%;
-  display: inline-block;
+  float: left;
+  position: relative;
+  /* display: inline-block; */
 }
