@@ -132,6 +132,10 @@ class BubbleChart extends React.Component {
     // d3.select(self.frameElement)
     //   .style("height", diameter + "px");
 
+    node.on('click', sel => {
+      console.log(sel);
+      this.setState({selectedNode: sel.data})
+    });
   }
 
   render() {
