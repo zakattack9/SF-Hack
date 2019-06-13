@@ -4,14 +4,15 @@ import HomeMain from './components/HomeMain';
 import HomeNotifications from './components/HomeNotifications';
 import ReportedOutagesRow from './components/ReportedOutagesRow';
 import WeatherUpdateRows from './components/WeatherUpdateRows';
+import Select from './'
 
 function App() {
   return (
     <div className="App">
-      {/* <HomeMain/>
+       <HomeMain/>
       <HomeNotifications/> */}
       {/* <ReportedOutagesRow/> */}
-      <WeatherUpdateRows/>
+      {/* <WeatherUpdateRows/> */}
     </div>
   );  
 }
