@@ -135,9 +135,7 @@ class BubbleChart extends React.Component {
   }
 
   render() {
-    return (
-      <div className="BubbleChart"></div>
-    );
+    return <div className="BubbleChart"></div>;
   };
 }
 
