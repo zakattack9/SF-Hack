@@ -1,33 +1,23 @@
 .App {
-  text-align: center;
+  height: 99.4%;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.HomeMain {
+  /* background-color: aqua; */
+  width: 70%;
+  height: 100%;
+  float: left;
+  position: relative;
+  /* display: inline-block; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.HomeNotifications {
+  /* background: yellow; */
+  width: 30%;
+  height: 100%;
+  float: left;
+  position: relative;
+  /* display: inline-block; */
 }

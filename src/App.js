@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import OutageRow from './components/OutageRow';
+import HomeMain from './components/HomeMain';
+import HomeNotifications from './components/HomeNotifications';
 
 function App() {
   return (
     <div className="App">
-        <OutageRow />
-       
+      <HomeMain/>
+      <HomeNotifications/>
     </div>
   );  
 }

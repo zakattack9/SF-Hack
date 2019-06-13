@@ -1,20 +1,13 @@
 import React from 'react';
 
 function UserOutageNotification(props) {
-
-    return (
-
-        <div className = 'userOutageNotification' >
-            
-            <h3 className = 'time' >{(props.time)}</h3>
-            <h2 className = 'office'>{(props.office)}</h2>
-            <h3 className = 'location'>{(props.location)}</h3>
-        </div>
-
-
-
-    )
-
+  return (
+    <div className='UserOutageNotification' >
+      <div className='time'>{props.time}</div>
+      <div className='office'>{props.office}</div>
+      <div className='location'>{props.location}</div>
+    </div>
+  )
 }
 
 export default UserOutageNotification;
