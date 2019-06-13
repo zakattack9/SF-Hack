@@ -92,6 +92,10 @@
   left: 0;
 }
 
-.LocationStatsWrapper .outageGraph {
+/* .LocationStatsWrapper .outageGraph {
   width: 50%;
+} */
+
+.green {
+  color: #A4E6A2;
 }

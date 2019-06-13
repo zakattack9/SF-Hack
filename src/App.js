@@ -1,22 +1,19 @@
 import React from 'react';
-import './App.css';
-import HomeMain from './components/HomeMain';
-import HomeNotifications from './components/HomeNotifications';
-// import ReportedOutagesRow from './components/ReportedOutagesRow';
+import Home from './components/Home';
+import ReportedOutagesRow from './components/ReportedOutagesRow';
 import LocationStats from './components/LocationStats';
+import { Route, Switch } from 'react-router-dom';
+
 
 class App extends React.Component {
-  state = { selectedNode: null };
-  
-  render () {
+  render() {
     return (
-      <div className="App">
-        <HomeMain/>
-        <HomeNotifications/>
-        {/* <ReportedOutagesRow/> */}
-        {/* <LocationStats /> */}
-      </div>
-    );  
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/reports" component={ReportedOutagesRow} />
+        <Route path="/location" component={LocationStats} />
+      </Switch>
+    );
   }
 }
 
