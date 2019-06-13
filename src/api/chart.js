@@ -1,3 +1,5 @@
+import * as d3 from "d3";
+
 export function buildChart(data) {
   let sfData = {
     "name": "Power Outage Data",
