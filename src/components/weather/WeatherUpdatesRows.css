@@ -1,11 +1,11 @@
-.ReportedOutagesRow {
+.WeatherUpdatesRow {
   height: 75%;
   position: relative;
   top: 2em;
   padding-top: 3.5em;
 }
 
-.ReportedOutagesRow .searchBar {
+.WeatherUpdatesRow .searchBar {
   display: block;
   position: absolute;
   top: 0;
@@ -13,14 +13,14 @@
   transform: translate(-50%, 0%);
 }
 
-.ReportedOutagesRow .boltIcon {
+.WeatherUpdatesRow .cloudIcon {
   position: relative;
   width: 38%;
   margin: 0.5em auto 1.5em auto;
   display: block;
 }
 
-.outagesTitle {
+.weatherUpdatesTitle {
   font-size: 1.15em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -29,14 +29,25 @@
   display: block;
 }
 
-.ReportedOutagesRow .reportBtn {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
-  top: 4em;
+.weatherNotificationWrapper {
+  width: 38%;
+  margin: 0 auto;
+  display: block;
+  height: 70vh;
+  overflow: auto;
 }
 
-.groupLocationTime .location {
+.weatherNotification {
+  margin-bottom: 3em;
+  word-wrap: break-word;
+}
+
+.weatherNotification .groupLocationTime {
+  text-align: left;
+  position: relative;
+}
+
+.weatherNotification .groupLocationTime .location {
   font-size: 0.7em;
   color: #555555;
   font-weight: bold;
@@ -46,7 +57,7 @@
   text-align: left;
 }
 
-.groupLocationTime .outageTime {
+.weatherNotification .groupLocationTime .outageTime {
   text-align: left;
   font-size: 0.7em;
   color: #5a5a5a;
@@ -56,7 +67,7 @@
   margin: 0;
 }
 
-.stateFarmLocation {
+.weatherWarning {
   font-size: 1em;
   text-align: left;
   margin-bottom: 20px;
@@ -64,7 +75,7 @@
   margin: 0;
 }
 
-.description {
+.weatherNotification .description {
   font-size: 0.85em;
   margin: 0;
   margin-top: 5px;
@@ -73,25 +84,7 @@
   line-height: 1.5em;
 }
 
-.outageNotifications {
-  margin-bottom: 3em;
-  word-wrap: break-word;
-}
-
-.groupLocationTime {
-  text-align: left;
-  position: relative;
-}
-
-.outageNotificationWrapper {
-  width: 38%;
-  margin: 0 auto;
-  display: block;
-  height: 65vh;
-  overflow: auto;
-}
-
-.outagesNav {
+.WeatherUpdatesRow .outagesNav {
   position: absolute;
   top: 50%;
   right: 3%;
@@ -102,35 +95,40 @@
   color: #3d3d3d;
 }
 
-.outagesNav .homeIcon {
+.WeatherUpdatesRow .outagesNav .homeIcon {
   display: block;
   margin-left: auto;
 }
 
-.outagesNav .homeIcon a {
+.WeatherUpdatesRow .outagesNav .homeIcon a {
   color: #3d3d3d;
   transition: 0.2s;
 }
 
-.outagesNav .homeIcon a:hover {
+.WeatherUpdatesRow .outagesNav .homeIcon a:hover {
   color: rgb(94, 94, 94);
 }
 
-.outagesNav .arrowWrapper {
+.WeatherUpdatesRow .outagesNav .arrowWrapper {
   margin-top: 1em;
   margin-right: 0.2em;
   transition: 0.2s;
 }
 
-.outagesNav .arrowWrapper:hover {
+.WeatherUpdatesRow .outagesNav .arrowWrapper a {
+  color: #3d3d3d;
+  transition: 0.2s;
+}
+
+.WeatherUpdatesRow .outagesNav .arrowWrapper a:hover {
   color: rgb(94, 94, 94);
 }
 
-.outagesNav .arrowWrapper .arrowIcon {
+.WeatherUpdatesRow .outagesNav .arrowWrapper .arrowIcon {
   display: inline-block;
 }
 
-.outagesNav .arrowWrapper .arrowText {
+.WeatherUpdatesRow .outagesNav .arrowWrapper .arrowText {
   font-size: 0.9em;
   display: inline-block;
   text-transform: uppercase;
@@ -138,3 +136,4 @@
   line-height: 1.2em;
   padding-right: 1em;
 }
+

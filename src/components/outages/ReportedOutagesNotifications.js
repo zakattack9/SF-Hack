@@ -2,7 +2,7 @@ import React from 'react';
 
 function ReportedOutagesNotifications(props) {
   return (
-    <div className='outageNotifications'>
+    <div className='outageNotification'>
       <div className='groupLocationTime'>
         <h4 className='location'>{props.location}</h4>
         <h4 className='outageTime'>{props.time}</h4>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './ReportedOutagesNotifications.css';
+import './ReportedOutagesRow.css';
 import ReportedOutagesNotifications from './ReportedOutagesNotifications';
 import SearchBar from '../SearchBar';
 import ReportButton from '../ReportButton';
@@ -35,8 +35,10 @@ function ReportedOutagesRow(props) {
         </div>
 
         <div className="arrowWrapper">
-          <div className="arrowText">Weather<br />Updates</div>
-          <FontAwesomeIcon className="arrowIcon" icon={faCaretRight} size="2x" />
+          <Link to='/weather'>
+            <div className="arrowText">Weather<br />Updates</div>
+            <FontAwesomeIcon className="arrowIcon" icon={faCaretRight} size="2x" />
+          </Link>
         </div>
       </div>
     </div>
