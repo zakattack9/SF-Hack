@@ -26,24 +26,24 @@
   top: 1em;
 }
 
-.UserOutageNotification {
+.OutageNotification {
   font-size: 1em;
   margin-bottom: 10%;
 }
 
-.UserOutageNotification .time {
+.OutageNotification .time {
   font-size: 0.8em;
   color: #5c5c5c;
   text-align: left;
   display: inline-block;
 }
 
-.UserOutageNotification .office {
+.OutageNotification .office {
   font-size: 1em;
   color:white;
 }
 
-.UserOutageNotification .location {
+.OutageNotification .location {
   font-size: 0.6em;
   text-transform: uppercase;
   text-align: left;

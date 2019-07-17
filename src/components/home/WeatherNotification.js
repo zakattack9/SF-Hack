@@ -1,8 +1,8 @@
 import React from 'react';
 
-const WeatherNotifications = props => {
+const WeatherNotification = props => {
   return (
-    <div className='WeatherNotifications'>
+    <div className='WeatherNotification'>
       <div className='groupLocationTime'>
         <div className='location'>{props.location}</div>
         <div className='weatherTime'>{props.time}</div>
@@ -15,4 +15,4 @@ const WeatherNotifications = props => {
   )
 }
 
-export default WeatherNotifications;
+export default WeatherNotification;

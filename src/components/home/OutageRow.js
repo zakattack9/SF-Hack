@@ -1,6 +1,6 @@
 import React from 'react';
 import './OutageRow.css';
-import UserOutageNotification from './UserOutageNotification';
+import OutageNotification from './OutageNotification';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -14,9 +14,9 @@ const OutageRow = props => {
           <FontAwesomeIcon icon={faBolt} size="lg" />
         </div>
       </div>
-      <UserOutageNotification time='2:05 pm' office='Marina Heights' location='Phoenix, AZ' />
-      <UserOutageNotification time='6:03 am' office='Dallas Hub' location='Dallas, TX' />
-      <UserOutageNotification time='5:45 am' office='Atlanta Hub' location='Atlanta, GA' />
+      <OutageNotification time='2:05 pm' office='Marina Heights' location='Phoenix, AZ' />
+      <OutageNotification time='6:03 am' office='Dallas Hub' location='Dallas, TX' />
+      <OutageNotification time='5:45 am' office='Atlanta Hub' location='Atlanta, GA' />
 
       <div className="viewAll">
         <Link to="/outages">

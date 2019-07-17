@@ -34,7 +34,7 @@
   top: 1em;
 }
 
-.WeatherNotifications {
+.WeatherNotification {
   font-size: 1em;
   margin-bottom: 10%;
 }
@@ -65,12 +65,12 @@
   display: inline-block;
 }
 
-.WeatherNotifications .weatherTitle {
+.WeatherNotification .weatherTitle {
   font-size: 1em;
   margin-bottom: 3px;
 }
 
-.WeatherNotifications .description {
+.WeatherNotification .description {
   font-size: 0.77em;
 }
 
