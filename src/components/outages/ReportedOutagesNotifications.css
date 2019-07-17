@@ -1,0 +1,141 @@
+.ReportedOutagesRow {
+  height: 75%;
+  position: relative;
+  top: 2em;
+  padding-top: 3.5em;
+}
+
+.ReportedOutagesRow .searchBar {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.ReportedOutagesRow .boltIcon {
+  position: relative;
+  width: 38%;
+  margin: 0.5em auto 1.5em auto;
+  display: block;
+}
+
+.outagesTitle {
+  font-size: 1.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: 38%;
+  margin: 0.5em auto 1.5em auto;
+  display: block;
+}
+
+.ReportedOutagesRow .reportBtn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 4em;
+}
+
+.groupLocationTime .location {
+  font-size: 0.7em;
+  color: #555555;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0;
+  text-align: left;
+}
+
+.groupLocationTime .outageTime {
+  text-align: left;
+  font-size: 0.7em;
+  color: #5a5a5a;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 0;
+}
+
+.stateFarmLocation {
+  font-size: 1em;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  margin: 0;
+}
+
+.description {
+  font-size: 0.85em;
+  margin: 0;
+  margin-top: 5px;
+  text-align: left;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+.outageNotifications {
+  margin-bottom: 3em;
+  word-wrap: break-word;
+}
+
+.groupLocationTime {
+  text-align: left;
+  position: relative;
+}
+
+.outageNotificationWrapper {
+  width: 38%;
+  margin: 0 auto;
+  display: block;
+  height: 65vh;
+  overflow: auto;
+}
+
+.outagesNav {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+  width: 10%;
+  text-align: right;
+  display: block;
+  color: #3d3d3d;
+}
+
+.outagesNav .homeIcon {
+  display: block;
+  margin-left: auto;
+}
+
+.outagesNav .homeIcon a {
+  color: #3d3d3d;
+  transition: 0.2s;
+}
+
+.outagesNav .homeIcon a:hover {
+  color: rgb(94, 94, 94);
+}
+
+.outagesNav .arrowWrapper {
+  margin-top: 1em;
+  margin-right: 0.2em;
+  transition: 0.2s;
+}
+
+.outagesNav .arrowWrapper:hover {
+  color: rgb(94, 94, 94);
+}
+
+.outagesNav .arrowWrapper .arrowIcon {
+  display: inline-block;
+}
+
+.outagesNav .arrowWrapper .arrowText {
+  font-size: 0.9em;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.2em;
+  padding-right: 1em;
+}

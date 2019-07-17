@@ -1,6 +1,6 @@
 import React from 'react';
 import * as d3 from "d3";
-import { getPowerOutageData } from  '../api/api';
+import { getPowerOutageData } from  '../../api/api';
 import { Link } from 'react-router-dom';
 
 class BubbleChart extends React.Component {
@@ -15,7 +15,7 @@ class BubbleChart extends React.Component {
       "children": [...data]
     }
 
-    var diameter = 600;
+    var diameter = 750;
 
     var bubble = d3.pack(sfData)
       .size([diameter, diameter])
@@ -29,7 +29,7 @@ class BubbleChart extends React.Component {
 
     var nodes = d3.hierarchy(sfData)
       .sum(function (d) {
-        return d.size < 50000 ? d.size * 30 : d.size
+        return d.size < 50000 ? d.size * 30 : d.size + 10000
       })
 
     var node = svg.selectAll(".node")

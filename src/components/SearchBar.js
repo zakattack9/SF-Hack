@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const SearchBar = props => {
   const searchBarStyle = {
     width: props.width,

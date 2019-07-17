@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Select = props => {
   const selectStyle = {
     width: props.width,

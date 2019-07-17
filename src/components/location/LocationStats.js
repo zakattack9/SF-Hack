@@ -1,7 +1,7 @@
 import React from 'react';
 import './LocationStats.css';
-import SearchBar from './SearchBar';
-import ReportButton from './ReportButton';
+import SearchBar from '../SearchBar';
+import ReportButton from '../ReportButton';
 // import PieChart from './PieChart';
 
 class LocationStats extends React.Component {

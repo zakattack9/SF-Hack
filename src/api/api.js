@@ -3,7 +3,7 @@ import axios from 'axios';
 import { sfLocationData, locationBuilder } from './data.js';
 // import { buildChart } from './chart.js';
 
-const API_KEY = 'ASU378h8!f41G!hu7';
+const API_KEY = 'ASU3736!984!76';
 
 // States, Counties, Cities to pull power outage data from
 const SF_LOCATIONS_SORTED = locationBuilder();
@@ -147,7 +147,7 @@ export function getPowerOutageData() {
         }
       }
     
-      // console.log("SF Location Data", sfLocationData);
+      console.log("SF Location Data", sfLocationData);
       // buildChart(sfLocationData);
       resolve(sfLocationData);
     }

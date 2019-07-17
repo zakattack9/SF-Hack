@@ -43,6 +43,11 @@
   bottom: 5%;
 }
 
+.reportBtn:hover {
+  color: #1D1D1D !important;
+  background-color: #FFD227;
+}
+
 .searchBar {
   position: absolute;
   left: 5%;
@@ -51,6 +56,7 @@
 
 .BubbleChart {
   position: absolute;
-  left: 10%;
-  top: 10%;
+  left: 45%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

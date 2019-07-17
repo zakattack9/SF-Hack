@@ -19,7 +19,7 @@ const OutageRow = props => {
       <UserOutageNotification time='5:45 am' office='Atlanta Hub' location='Atlanta, GA' />
 
       <div className="viewAll">
-        <Link to="/reports">
+        <Link to="/outages">
           View All
         </Link>
       </div>

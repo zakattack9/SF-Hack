@@ -1,6 +1,6 @@
 import React from 'react';
-import ReportButton from './ReportButton';
-import SearchBar from './SearchBar';
+import ReportButton from '../ReportButton';
+import SearchBar from '../SearchBar';
 import BubbleChart from './BubbleChart';
 import './HomeMain.css';
 

@@ -1,7 +1,8 @@
 import React from 'react';
-import '../App.css';
+import './Home.css';
 import HomeMain from './HomeMain';
-import HomeNotifications from './HomeNotifications';
+import WeatherRow from './WeatherRow';
+import OutageRow from './OutageRow';
 // import ReportedOutagesRow from './components/ReportedOutagesRow';
 // import LocationStats from './components/LocationStats';
 
@@ -12,8 +13,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <HomeMain/>
-        <HomeNotifications/>
+        <HomeMain />
+
+        <div className='HomeNotifications'>
+          <WeatherRow />
+          <OutageRow />
+        </div>
+        
         {/* <ReportedOutagesRow/> */}
         {/* <LocationStats /> */}
       </div>

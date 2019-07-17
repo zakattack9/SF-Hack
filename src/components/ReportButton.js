@@ -11,6 +11,7 @@ const btnStyle = {
   padding: '0.5em',
   display: 'block',
   width: '90px',
+  transition: '0.3s'
 };
 
 const ReportButton = () => {
