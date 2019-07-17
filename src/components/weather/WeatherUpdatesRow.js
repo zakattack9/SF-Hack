@@ -5,11 +5,11 @@ import SearchBar from '../SearchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
 
-function WeatherUpdateRows(props) {
+function WeatherUpdatesRow(props) {
   return (
     <div>  
       <SearchBar width="20%" />
-      <h1 className = 'mainTitle'>Weather Updates</h1>
+      <h1 className = 'weatherUpdatesTitle'>Weather Updates</h1>
       <WeatherUpdateNotifications location = 'Phoenix, AZ' time = '10:03 am' outageWarning = 'Heavy Flooding' description = "OpenWeatherMap has reported heavy rain for the area of Phoenix..."/>
       <WeatherUpdateNotifications location = 'Bloomington, IL' time = '8:03 am' outageWarning = 'Thunderstorms' description = "OpenWeatherMap has reported upcoming thunderstorms for the area of Bloomington..."/>
       <WeatherUpdateNotifications location = 'Atlanta, GA' time = '8:03 am' outageWarning = 'High Winds' description = "OpenWeatherMap has reported high winds for the area of Atlanta..."/>
@@ -18,4 +18,4 @@ function WeatherUpdateRows(props) {
   )
 }
 
-export default WeatherUpdateRows;
+export default WeatherUpdatesRow;

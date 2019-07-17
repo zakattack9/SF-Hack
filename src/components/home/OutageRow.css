@@ -1,8 +1,8 @@
 .OutageRow {
-  position: relative;
-  top: 4.6%;
-  height: auto;
+  height: 50%;
   padding-right: 3em;
+  padding-top: 2em;
+  box-sizing: border-box;
 }
 
 .OutageRow .titleWrapper {
@@ -53,5 +53,9 @@
   display: inline-block;
   font-weight: bold;
   margin-top: 0.3em;
+}
+
+.OutageRow .viewAll {
+  padding-top: 2em;
 }
 

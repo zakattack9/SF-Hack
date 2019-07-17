@@ -1,7 +1,5 @@
 .WeatherRow {
-  position: relative;
-  top: 4.6%;
-  height: auto;
+  height: 50%;
   padding-right: 3em;
 }
 
@@ -10,7 +8,7 @@
   height: 1px;
   color: #3D3D3D; /* old IE */
   background-color: #3D3D3D; /* Modern Browsers */
-  margin-bottom: 2em;
+  margin: 2em 0;
 }
 
 .WeatherRow .titleWrapper {
@@ -59,10 +57,11 @@
 .groupLocationTime .weatherTime {
   font-size: 0.7em;
   text-align: right;
-  color: #5c5c5c;
+  color: #696969;
   position: absolute;
   right: 0;
   display: inline-block;
+  margin: 0;
 }
 
 .WeatherNotification .weatherTitle {

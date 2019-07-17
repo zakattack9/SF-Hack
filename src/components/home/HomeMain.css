@@ -7,7 +7,7 @@
   border-right: #FFFFFF solid 1px;
   padding-right: 10px;
   position: absolute;
-  top: 5%;
+  /* top: 5%; */
   right: 5%;
 }
 
@@ -51,12 +51,12 @@
 .searchBar {
   position: absolute;
   left: 5%;
-  top: 5%;
+  /* top: 5%; */
 }
 
 .BubbleChart {
   position: absolute;
   left: 45%;
-  top: 50%;
+  top: 52%;
   transform: translate(-50%, -50%);
 }

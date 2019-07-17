@@ -10,6 +10,8 @@
   height: 100%;
   float: left;
   position: relative;
+  padding-top: 3em;
+  box-sizing: border-box;
   /* display: inline-block; */
 }
 
@@ -19,5 +21,7 @@
   height: 100%;
   float: left;
   position: relative;
+  padding-top: 3em;
+  box-sizing: border-box;
   /* display: inline-block; */
 }
