@@ -29,6 +29,10 @@
   display: block;
 }
 
+.ReportedOutagesRow a {
+  text-decoration: none;
+}
+
 .ReportedOutagesRow .reportBtn {
   position: relative;
   left: 50%;

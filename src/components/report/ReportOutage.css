@@ -1,0 +1,72 @@
+.ReportOutage {
+  width: 30%;
+  position: relative;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.reportIcon {
+  color: #FFD227;
+}
+
+.reportTitle {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.fieldTitle {
+  font-size: 0.9em;
+  margin-top: 1.5em;
+  font-weight: 500;
+  color: #666666;
+}
+
+.locationField {
+  font-size: 0.85em;
+  width: 100%;
+  background-color: #272727;
+  color: rgb(146, 146, 146);
+  margin-top: 0.7em;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.descriptionField {
+  font-size: 0.85em;
+  width: 100%;
+  height: 20vh;
+  background-color: #272727;
+  color: rgb(146, 146, 146);
+  margin-top: 0.7em;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+}
+
+.sendReportBtn {
+  font-size: 0.7em;
+  color: #FFD227;
+  border: #FFD227 solid 2px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border-radius: 100px 100px 100px 100px;
+  margin: 2em auto 0 auto;
+  padding: 0.5em;
+  display: block;
+  width: 90px;
+  transition: 0.3s;
+}
+
+.sendReportBtn:hover {
+  background-color: #FFD227;
+  color: #1D1D1D;
+}

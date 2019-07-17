@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const btnStyle = {
   fontSize: '0.7em',
@@ -15,7 +16,7 @@ const btnStyle = {
 };
 
 const ReportButton = () => {
-  return <div style={btnStyle} className="reportBtn">Report +</div>;
+  return <Link to="/report"><div style={btnStyle} className="reportBtn">Report +</div></Link>;
 }
 
 export default ReportButton;
