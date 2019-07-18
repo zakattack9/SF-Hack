@@ -1,6 +1,6 @@
 import React from 'react';
 import './WeatherRow.css';
-import WeatherNotification from './WeatherNotification';
+import SideNotification  from './SideNotification';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -15,9 +15,9 @@ const WeatherRow = props => {
         </div>
       </div>
 
-      <WeatherNotification location='Phoenix, AZ' time='8:03 pm' weatherTitle='Heavy Flooding' description="OpenWeatherMap has reported heavy rain for the area of Phoenix" />
-      <WeatherNotification location='Phoenix, AZ' time='8:03 pm' weatherTitle='Heavy Flooding' description="OpenWeatherMap has reported heavy rain for the area of Phoenix" />
-      <WeatherNotification location='Bloomington, IL' time='5:30 am' weatherTitle='Strong Winds' description="OpenWeatherMap has reported strong winds for the area of Bloomington" />
+      <SideNotification location="Phoenix, AZ" time='2:05 pm' title='Heavy Flooding' description='OpenWeatherMap has reported heavy rain for the area of Phoenix' />
+      <SideNotification location="Tempe, AZ" time='8:03 pm' title='Heavy Flooding' description='OpenWeatherMap has reported heavy rain for the area of Phoenix' />
+      <SideNotification location="Bloomington, IL" time='5:30 am' title='Strong Winds' description='OpenWeatherMap has reported strong winds for the area of Bloomington' />
       
       <div className="viewAll">
         <Link to="/weather">

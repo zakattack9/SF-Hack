@@ -1,6 +1,6 @@
 import React from 'react';
 import './OutageRow.css';
-import OutageNotification from './OutageNotification';
+import SideNotification  from './SideNotification';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -15,9 +15,9 @@ const OutageRow = props => {
         </div>
       </div>
       
-      <OutageNotification time='2:05 pm' office='Marina Heights' location='Phoenix, AZ' />
-      <OutageNotification time='6:03 am' office='Dallas Hub' location='Dallas, TX' />
-      <OutageNotification time='5:45 am' office='Atlanta Hub' location='Atlanta, GA' />
+      <SideNotification location="Tempe, AZ" time='2:05 pm' title='Marina Heights' description='All systems and servers have gone down due to a power outage' />
+      <SideNotification location="Dallas, TX" time='2:05 pm' title='Dallas Hub' description='All systems and servers have gone down due to a power outage' />
+      <SideNotification location="Atlanta, GA" time='2:05 pm' title='Atlanta Hub' description='All systems and servers have gone down due to a power outage' />
 
       <div className="viewAll">
         <Link to="/outages">

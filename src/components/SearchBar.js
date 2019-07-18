@@ -14,7 +14,7 @@ const SearchBar = props => {
     boxShadow: 'inset 0 2px 3px 0 #232323',
     padding: '0.6em',
     paddingLeft: '1.5em',
-    display: 'block',
+    display: 'block'
   };
 
   return <input style={searchBarStyle} className="searchBar" value="Search"></input>;

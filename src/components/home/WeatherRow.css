@@ -84,4 +84,9 @@
 .viewAll a {
   text-decoration: none;
   color: #808080;
+  transition: 0.2s;
+}
+
+.viewAll a:hover {
+  color: #acacac;
 }

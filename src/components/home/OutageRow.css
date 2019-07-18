@@ -1,7 +1,7 @@
 .OutageRow {
   height: 50%;
   padding-right: 3em;
-  padding-top: 2em;
+  padding-top: 1em;
   box-sizing: border-box;
 }
 
@@ -53,9 +53,5 @@
   display: inline-block;
   font-weight: bold;
   margin-top: 0.3em;
-}
-
-.OutageRow .viewAll {
-  padding-top: 2em;
 }
 
