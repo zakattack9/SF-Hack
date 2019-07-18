@@ -3,26 +3,63 @@ import './ReportOutage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faHome, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { sfLocationData } from '../../api/data';
+import axios from 'axios';
+// https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/report
 
 class ReportOutage extends React.Component {
-  componentDidMount() {
+  state = { location: 'Tempe, AZ:Marina Heights', description: null };
+
+  handleSubmit = event => {
+    // need to add code to compensate for time differences
+    event.preventDefault();
+    // console.log(this.state.location, this.state.description);
+    let cityState = this.state.location.split(":")[0];
+    let sfLocation = this.state.location.split(":")[1];
+    console.log(cityState, sfLocation);
+    axios({
+      url: 'https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/report',
+      method: 'post',
+      contentType: "application/json; charset=utf-8",
+      dataType: 'JSON',
+      data: JSON.stringify({
+        "time": new Date(),
+        "city": cityState,
+        "description": this.state.description,
+        "location": sfLocation
+      })
+    })
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 
   render() {
     return (
       <div className="ReportOutage">
         <div className="reportWrapper">
-          <div className="reportIcon">
-            <FontAwesomeIcon icon={faBolt} size="lg" />
-          </div>
-          <h1 className='reportTitle'>Report an Outage</h1>
-          <div className="fieldTitle">Location</div>
-          <input className="locationField" value="yuh"></input>
-          <div className="fieldTitle">Cause of Outage</div>
-          <textarea className="descriptionField"></textarea>
-          <Link to='/'>
-            <div className="sendReportBtn">Report</div>
-          </Link>
+          <form onSubmit={this.handleSubmit}>
+            <div className="reportIcon">
+              <FontAwesomeIcon icon={faBolt} size="lg" />
+            </div>
+            <h1 className='reportTitle'>Report an Outage</h1>
+
+            <div className="fieldTitle">Location</div>
+            <select className="locationSelect" onChange={(e) => this.setState({ location: e.target.value })}>
+              {sfLocationData.map((location, i) => {
+                let cityState = `${location.city}, ${location.abbrState}:${location.locationName}`;
+                return <option key={i} value={cityState}>{location.locationName}</option>
+              })}
+            </select>
+
+            <div className="fieldTitle">Cause of Outage</div>
+            <textarea className="descriptionField" onChange={(e) => this.setState({ description: e.target.value })}></textarea>
+
+            <input type="submit" value="Report" className="sendReportBtn"></input>
+          </form>
         </div>
 
         <div className="sideNav">

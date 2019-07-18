@@ -136,7 +136,7 @@ class BubbleChart extends React.Component {
     //   .style("height", diameter + "px");
 
     node.on('click', sel => {
-      console.log(sel);
+      // console.log(sel);
       this.setState({ location: sel.data, redirect: true })
     });
   }

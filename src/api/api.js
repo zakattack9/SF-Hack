@@ -147,7 +147,7 @@ export function getPowerOutageData() {
         }
       }
     
-      console.log("SF Location Data", sfLocationData);
+      // console.log("SF Location Data", sfLocationData);
       // buildChart(sfLocationData);
       resolve(sfLocationData);
     }
