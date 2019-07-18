@@ -20,7 +20,9 @@ class ReportOutage extends React.Component {
           <input className="locationField" value="yuh"></input>
           <div className="fieldTitle">Cause of Outage</div>
           <textarea className="descriptionField"></textarea>
-          <div className="sendReportBtn">Report</div>
+          <Link to='/'>
+            <div className="sendReportBtn">Report</div>
+          </Link>
         </div>
 
         <div className="sideNav">

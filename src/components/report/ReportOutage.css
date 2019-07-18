@@ -11,6 +11,10 @@
   transform: translate(-50%, -50%);
 }
 
+.reportWrapper a {
+  text-decoration: none;
+}
+
 .reportIcon {
   color: #FFD227;
 }
