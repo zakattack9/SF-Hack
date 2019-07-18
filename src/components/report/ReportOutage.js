@@ -5,7 +5,6 @@ import { faBolt, faHome, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import { sfLocationData } from '../../api/data';
 import axios from 'axios';
-// https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/report
 
 class ReportOutage extends React.Component {
   state = { location: 'Tempe, AZ:Marina Heights', description: null };
@@ -13,28 +12,27 @@ class ReportOutage extends React.Component {
   handleSubmit = event => {
     // need to add code to compensate for time differences
     event.preventDefault();
-    // console.log(this.state.location, this.state.description);
     let cityState = this.state.location.split(":")[0];
     let sfLocation = this.state.location.split(":")[1];
-    console.log(cityState, sfLocation);
+    var date = new Date();
     axios({
       url: 'https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/report',
       method: 'post',
       contentType: "application/json; charset=utf-8",
       dataType: 'JSON',
       data: JSON.stringify({
-        "time": new Date(),
+        "time": date.toUTCString(),
         "city": cityState,
         "description": this.state.description,
         "location": sfLocation
       })
     })
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      console.log(err);
-    })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
   render() {
