@@ -3,30 +3,24 @@ AWS.config.update({ region: 'us-west-2' });
 
 const dynamodb = new AWS.DynamoDB();
 
-module.exports.sendReport = (event, context, callback) => {
-  console.log("hello", event.body);
-  let { time, city, description, location } = JSON.parse(event.body);
-  console.log(time, city, description, location);
-
+module.exports.getReports = (event, context, callback) => {
   var dynamoParams = {
-    Item: {
-      "time": {
-        S: time
-      },
-      "city": {
-        S: city
-      },
-      "description": {
-        S: description
-      },
-      "location": {
-        S: location
-      }
+    TableName: 'PowerOutageReports',
+    FilterExpression: '#time BETWEEN :date1 AND :date2',
+    ExpressionAttributeNames: {
+      '#time': 'time'
     },
-    TableName: "PowerOutageReports"
+    ExpressionAttributeValues: {
+      ":date1": {
+        "S": "2019-07-18T18:38:44.238Z"
+      },
+      ":date2": {
+        "S": new Date().toISOString()
+      }
+    }
   };
 
-  dynamodb.putItem(dynamoParams, (err, data) => {
+  dynamodb.scan(dynamoParams, (err, data) => {
     if (err) {
       console.log(err, err.stack);
       const response = {

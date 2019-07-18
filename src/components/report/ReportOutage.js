@@ -14,14 +14,14 @@ class ReportOutage extends React.Component {
     event.preventDefault();
     let cityState = this.state.location.split(":")[0];
     let sfLocation = this.state.location.split(":")[1];
-    var date = new Date();
+
     axios({
       url: 'https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/report',
       method: 'post',
       contentType: "application/json; charset=utf-8",
       dataType: 'JSON',
       data: JSON.stringify({
-        "time": date.toUTCString(),
+        "time": new Date().toISOString(),
         "city": cityState,
         "description": this.state.description,
         "location": sfLocation
