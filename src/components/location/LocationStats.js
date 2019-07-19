@@ -62,12 +62,16 @@ class LocationStats extends React.Component {
                 <td style={this.getRiskColor()}>{this.state.location.risk}</td>
               </tr>
               <tr>
-                <td>Last Updated:</td>
-                <td>{this.state.location.lastUpdated}</td>
+                <td>Type:</td>
+                <td>{this.state.location.type}</td>
               </tr>
               <tr>
                 <td>Reported Outages:</td>
                 <td>{this.state.location.reports.length}</td>
+              </tr>
+              <tr>
+                <td>Last Updated:</td>
+                <td>{this.state.location.lastUpdated}</td>
               </tr>
             </table>
           </div>

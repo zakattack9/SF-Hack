@@ -44,14 +44,15 @@ class WeatherRow extends React.Component {
             <FontAwesomeIcon icon={faCloud} size="lg" />
           </div>
         </div>
-        {this.state.weatherData.map(location => {
-          console.log(location);
-          return <SideNotification
-            location={location.locationName}
-            time={this.convertTime()}
-            title={location.weather[0].main}
-            description={`OpenWeatherMap has reported ${location.weather[0].description} for the area of ${location.city}`} />
-        })}
+        <div className="weatherWrapper">
+          {this.state.weatherData.map(location => {
+            return <SideNotification
+              location={location.locationName}
+              time={this.convertTime()}
+              title={location.weather[0].main}
+              description={`OpenWeatherMap has reported ${location.weather[0].description} for the area of ${location.city}`} />
+          })}
+        </div>
 
         {/* <SideNotification location="Phoenix, AZ" time='2:05 pm' title='Heavy Flooding' description='OpenWeatherMap has reported heavy rain for the area of Phoenix' />
         <SideNotification location="Tempe, AZ" time='8:03 pm' title='Heavy Flooding' description='OpenWeatherMap has reported heavy rain for the area of Phoenix' />

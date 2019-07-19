@@ -11,7 +11,7 @@ class BubbleChart extends React.Component {
   }
 
   createChart(data) {
-    //console.log(data);
+    // console.log(data);
     let sfData = {
       "name": "Power Outage Data",
       "children": [...data]
@@ -31,6 +31,9 @@ class BubbleChart extends React.Component {
 
     var nodes = d3.hierarchy(sfData)
       .sum(function (d) {
+        // if (d.size < 10) {
+        //   return d.size + 2000;
+        // }
         return d.size < 50000 ? d.size * 30 : d.size + 10000
       })
 

@@ -73,6 +73,11 @@
   font-size: 0.77em;
 }
 
+.weatherWrapper {
+  height: 65%;
+  overflow: scroll;
+}
+
 .viewAll {
   font-size: 0.7em;
   text-align: center;
