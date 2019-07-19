@@ -2,12 +2,12 @@ import React from 'react';
 import './ReportOutage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faHome, faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { sfLocationData } from '../../api/data';
 import axios from 'axios';
 
 class ReportOutage extends React.Component {
-  state = { location: 'Tempe, AZ:Marina Heights', description: null };
+  state = { location: 'Tempe, AZ:Marina Heights', description: null, redirect: false };
 
   handleSubmit = event => {
     // need to add code to compensate for time differences
@@ -28,7 +28,7 @@ class ReportOutage extends React.Component {
       })
     })
       .then(res => {
-        console.log(res);
+        this.setState({ redirect: true });
       })
       .catch(err => {
         console.log(err);
@@ -36,6 +36,10 @@ class ReportOutage extends React.Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/outages"></Redirect>
+    }
+
     return (
       <div className="ReportOutage">
         <div className="reportWrapper">

@@ -26,32 +26,16 @@
   top: 1em;
 }
 
-.OutageNotification {
-  font-size: 1em;
-  margin-bottom: 10%;
+.outagesWrapper {
+  height: 65%;
+  overflow: scroll;
 }
 
-.OutageNotification .time {
-  font-size: 0.8em;
-  color: #5c5c5c;
-  text-align: left;
-  display: inline-block;
+.SideNotification:last-child {
+  margin-bottom: 0;
 }
 
-.OutageNotification .office {
-  font-size: 1em;
-  color:white;
-}
-
-.OutageNotification .location {
-  font-size: 0.6em;
-  text-transform: uppercase;
-  text-align: left;
-  color: gray;
-  position: absolute;
-  left: 0;
-  display: inline-block;
-  font-weight: bold;
-  margin-top: 0.3em;
+.OutageRow .viewAll {
+  margin-top: 3em;
 }
 

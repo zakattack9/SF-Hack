@@ -9,17 +9,38 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class ReportedOutagesRow extends React.Component {
+  state = { outages: null }
+
   componentDidMount() {
     axios.get('https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/get')
       .then(res => {
-        console.log(res);
+        let outages = res.data.Items.sort(function(a,b){
+          return new Date(b.time.S) - new Date(a.time.S);
+        });
+        this.setState({ outages });
       })
       .catch(err => {
         console.log(err);
       })
   }
 
+  convertTime = (time) => {
+    let date = new Date(time);
+    console.log(date.getHours(), date.getMinutes());
+    let hrMin;
+    if (date.getHours() >= 12) {
+      hrMin = `${date.getHours() - 12}:${date.getMinutes()} pm`;
+    } else {
+      hrMin = `${date.getHours()}:${date.getMinutes()} am`;
+    }
+    return hrMin;
+  }
+
   render() {
+    if (this.state.outages === null) {
+      return (<div className="ReportedOutagesRow"></div>);
+    }
+
     return (
       <div className="ReportedOutagesRow">
         <SearchBar width="40%" />
@@ -28,14 +49,9 @@ class ReportedOutagesRow extends React.Component {
         </div>
         <h1 className='outagesTitle'>Reported Outages</h1>
         <div className="outageNotificationWrapper">
-          <ReportedOutagesNotifications location='Tempe, AZ' time='8:03 am' stateFarmLocation='Marina Heights' description="All systems and servers have gone down due to a mass power outage cause by heavy rain and wind in the Tempe area" />
-          <ReportedOutagesNotifications location='Phoenix, AZ' time='8:03 am' stateFarmLocation='Main Headquarters' description="A part of claims department is down due to a power outage that affected the south side of the Bloomington headquarters" />
-          <ReportedOutagesNotifications location='Phoenix, AZ' time='8:03 am' stateFarmLocation='Marina Heights' description="All systems and servers have gone down due to a power outage" />
-          <ReportedOutagesNotifications location='Phoenix, AZ' time='8:03 am' stateFarmLocation='Marina Heights' description="All systems and servers have gone down due to a power outage" />
-          <ReportedOutagesNotifications location='Tempe, AZ' time='8:03 am' stateFarmLocation='Marina Heights' description="All systems and servers have gone down due to a mass power outage cause by heavy rain and wind in the Tempe area" />
-          <ReportedOutagesNotifications location='Phoenix, AZ' time='8:03 am' stateFarmLocation='Main Headquarters' description="A part of claims department is down due to a power outage that affected the south side of the Bloomington headquarters" />
-          <ReportedOutagesNotifications location='Phoenix, AZ' time='8:03 am' stateFarmLocation='Marina Heights' description="All systems and servers have gone down due to a power outage" />
-          <ReportedOutagesNotifications location='Phoenix, AZ' time='8:03 am' stateFarmLocation='Marina Heights' description="All systems and servers have gone down due to a power outage" />
+          {this.state.outages.map(report => {
+            return <ReportedOutagesNotifications location={report.city.S} time={this.convertTime(report.time.S)} stateFarmLocation={report.location.S} description={report.description.S} />
+          })}
         </div>
         <ReportButton />
 
