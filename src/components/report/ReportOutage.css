@@ -61,6 +61,11 @@
   resize: none;
 }
 
+.errMsg {
+  font-size: 0.8em;
+  color: #FF6969;
+}
+
 .sendReportBtn {
   font-size: 0.7em;
   color: #FFD227;

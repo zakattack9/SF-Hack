@@ -67,7 +67,7 @@ class LocationStats extends React.Component {
               </tr>
               <tr>
                 <td>Reported Outages:</td>
-                <td>{this.state.location.reports}</td>
+                <td>{this.state.location.reports.length}</td>
               </tr>
             </table>
           </div>

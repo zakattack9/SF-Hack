@@ -7,32 +7,41 @@ import { sfLocationData } from '../../api/data';
 import axios from 'axios';
 
 class ReportOutage extends React.Component {
-  state = { location: 'Tempe, AZ:Marina Heights', description: null, redirect: false };
+  state = { 
+    location: 'Tempe, AZ:Marina Heights',
+    description: null,
+    redirect: false,
+    errMsg: '' 
+  };
 
   handleSubmit = event => {
-    // need to add code to compensate for time differences
     event.preventDefault();
-    let cityState = this.state.location.split(":")[0];
-    let sfLocation = this.state.location.split(":")[1];
-
-    axios({
-      url: 'https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/report',
-      method: 'post',
-      contentType: "application/json; charset=utf-8",
-      dataType: 'JSON',
-      data: JSON.stringify({
-        "time": new Date().toISOString(),
-        "city": cityState,
-        "description": this.state.description,
-        "location": sfLocation
+    if (this.state.description === null) {
+      this.setState({errMsg: 'Please provide the cause of the power outage'})
+    } else {
+      // need to add code to compensate for time differences
+      let cityState = this.state.location.split(":")[0];
+      let sfLocation = this.state.location.split(":")[1];
+  
+      axios({
+        url: 'https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/report',
+        method: 'post',
+        contentType: "application/json; charset=utf-8",
+        dataType: 'JSON',
+        data: JSON.stringify({
+          "time": new Date().toISOString(),
+          "city": cityState,
+          "description": this.state.description,
+          "location": sfLocation
+        })
       })
-    })
-      .then(res => {
-        this.setState({ redirect: true });
-      })
-      .catch(err => {
-        console.log(err);
-      })
+        .then(res => {
+          this.setState({ redirect: true });
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
   }
 
   render() {
@@ -59,6 +68,7 @@ class ReportOutage extends React.Component {
 
             <div className="fieldTitle">Cause of Outage</div>
             <textarea className="descriptionField" onChange={(e) => this.setState({ description: e.target.value })}></textarea>
+            <div className="errMsg">{this.state.errMsg}</div>
 
             <input type="submit" value="Report" className="sendReportBtn"></input>
           </form>

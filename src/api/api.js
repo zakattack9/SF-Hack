@@ -15,6 +15,7 @@ const SF_CITIES = SF_LOCATIONS_SORTED.cities;
 let sfStateData;
 let sfCountyData = {};
 let sfCityData = {};
+let outageReports;
 
 // gets data from PowerOutageAPI
 export function getPowerOutageData() {
@@ -25,6 +26,12 @@ export function getPowerOutageData() {
         return filterData.indexOf(data[filterParam]) !== -1;
       });
     }
+
+    // retrieves outage reports from DynamoDB
+    axios.get('https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/get')
+      .then(res => {
+        outageReports = res.data.Items;
+      })
   
     axios.get(`https://poweroutage.us/api/getstateoutageinfo/${API_KEY}`)
       .then(res => {
@@ -95,6 +102,7 @@ export function getPowerOutageData() {
     // adds power outage info to array of objects with SF locations
     function buildSFData() {
       // console.log(sfStateData , sfCountyData, sfCityData);
+      // console.log(outageReports);
     
       sfLocationData.forEach(location => {
         // adds state power outage data to SF location
@@ -110,6 +118,10 @@ export function getPowerOutageData() {
         // adds city power outage data to SF loaction
         location.powerOutageData.city = sfCityData[location.county].find(cityData => {
           return cityData.CityName === location.apiCity;
+        });
+
+        location.reports = outageReports.filter(report => {
+          return report.location.S === location.locationName;
         });
     
         let lastUpdated = location.powerOutageData.city.LastUpdatedDateTime;
@@ -129,19 +141,19 @@ export function getPowerOutageData() {
         // minimum percentage of people without power in city to be considered a medium risk
         const CITY_OUTAGE_COUNT_THRESHOLD = 0.1;
     
-        if (location.reports === 0 && percentWithoutPower <= CITY_OUTAGE_COUNT_THRESHOLD) {
+        if (location.reports.length === 0 && percentWithoutPower <= CITY_OUTAGE_COUNT_THRESHOLD) {
           location.risk = 'None';
           location.status = 'Good';
-        } else if (location.reports > 0 && percentWithoutPower <= CITY_OUTAGE_COUNT_THRESHOLD) {
+        } else if (location.reports.length > 0 && percentWithoutPower <= CITY_OUTAGE_COUNT_THRESHOLD) {
           location.risk = 'Low';
           location.status = 'Reported Down';
-        } else if (location.reports === 0 && percentWithoutPower > CITY_OUTAGE_COUNT_THRESHOLD) {
+        } else if (location.reports.length === 0 && percentWithoutPower > CITY_OUTAGE_COUNT_THRESHOLD) {
           location.risk = 'Medium';
           location.status = 'Potentially Down';
-        } else if (location.reports > 0 && percentWithoutPower > CITY_OUTAGE_COUNT_THRESHOLD) {
+        } else if (location.reports.length > 0 && percentWithoutPower > CITY_OUTAGE_COUNT_THRESHOLD) {
           location.risk = 'High';
           location.status = 'Likely Down';
-        } else if (location.reports > 2 && percentWithoutPower > 95) {
+        } else if (location.reports.length > 2 && percentWithoutPower > 95) {
           location.risk = 'Very High';
           location.status = 'Confirmed Down';
         }

@@ -24,7 +24,6 @@ class OutageRow extends React.Component {
 
   convertTime = (time) => {
     let date = new Date(time);
-    console.log(date.getHours(), date.getMinutes());
     let hrMin;
     if (date.getHours() >= 12) {
       hrMin = `${date.getHours() - 12}:${date.getMinutes()} pm`;
