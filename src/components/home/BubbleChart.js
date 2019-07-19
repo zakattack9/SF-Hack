@@ -17,7 +17,7 @@ class BubbleChart extends React.Component {
       "children": [...data]
     }
 
-    var diameter = 750;
+    var diameter = 850;
 
     var bubble = d3.pack(sfData)
       .size([diameter, diameter])
