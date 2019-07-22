@@ -152,7 +152,7 @@ export function getPowerOutageData() {
         } else if (location.reports.length > 0 && percentWithoutPower > CITY_OUTAGE_COUNT_THRESHOLD) {
           location.risk = 'High';
           location.status = 'Likely Down';
-        } else if (location.reports.length > 2 && percentWithoutPower > 95) {
+        } else if (location.reports.length > 2 && percentWithoutPower > 75) {
           location.risk = 'Very High';
           location.status = 'Confirmed Down';
         }
