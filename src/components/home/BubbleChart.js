@@ -1,13 +1,16 @@
 import React from 'react';
 import * as d3 from "d3";
 import { getPowerOutageData } from '../../api/api';
-import { Redirect, withRouter, Link } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 class BubbleChart extends React.Component {
-  state = { location: null, redirect: false };
+  state = { location: null, redirect: false, sfLocationData: null };
 
   componentDidMount() {
-    getPowerOutageData().then(data => this.createChart(data));
+    getPowerOutageData().then(data => {
+      this.setState({ sfLocationData: data });
+      this.createChart(data);
+    })
   }
 
   createChart(data) {
@@ -139,7 +142,6 @@ class BubbleChart extends React.Component {
     //   .style("height", diameter + "px");
 
     node.on('click', sel => {
-      // console.log(sel);
       this.setState({ location: sel.data, redirect: true })
     });
   }
@@ -149,11 +151,11 @@ class BubbleChart extends React.Component {
       this.props.history.push('/');
       return <Redirect to={{
         pathname: '/location',
-        state: { location: this.state.location }
+        state: { location: this.state.location, sfLocationData: this.state.sfLocationData }
       }} />
     }
 
-    return <Link to="/location"><div className="BubbleChart"></div></Link>;
+    return <div className="BubbleChart"></div>;
   };
 }
 

@@ -8,10 +8,13 @@ import { faBolt, faHome, faCloud } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 class LocationStats extends React.Component {
-  state = { location: this.props.location.state.location };
+  state = { location: this.props.location.state.location, sfLocationData: this.props.location.state.sfLocationData };
 
-  componentDidMount() {
-    console.log(this.state.location);
+  onSearchSubmit = (term) => {    
+    let locationObj = this.state.sfLocationData.find(location => {
+      return location.locationName.toLowerCase().includes(term.toLowerCase());
+    })
+    this.setState({ location: locationObj })
   }
 
   getStatusColor = () => {
@@ -43,7 +46,7 @@ class LocationStats extends React.Component {
   render() {
     return (
       <div className="LocationStatsWrapper">
-        <SearchBar width="100%" />
+        <SearchBar width="100%" onSubmitForm={this.onSearchSubmit} />
         <div className="stats">
           <div className="locationInfo">
             <div className="county">{this.state.location.county} County</div>
