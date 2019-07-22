@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class ReportedOutagesRow extends React.Component {
-  state = { outages: null }
+  state = { outages: null, search: null }
 
   componentDidMount() {
     axios.get('https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/get')
@@ -24,9 +24,27 @@ class ReportedOutagesRow extends React.Component {
       })
   }
 
+  onSearchSubmit = (term) => {
+    this.setState({ search: term });
+  }
+
+  renderOutages() {
+    if (this.state.search === null || this.state.search === '') {
+      return this.state.outages.map(report => {
+        return <ReportedOutagesNotifications location={report.city.S} time={this.convertTime(report.time.S)} stateFarmLocation={report.location.S} description={report.description.S} />
+      })
+    } else {
+      return this.state.outages.map(report => {
+        if (report.location.S.toLowerCase().includes(this.state.search.toLowerCase())) {
+          return <ReportedOutagesNotifications location={report.city.S} time={this.convertTime(report.time.S)} stateFarmLocation={report.location.S} description={report.description.S} />
+        }
+        return false;
+      })
+    }
+  }
+
   convertTime = (time) => {
     let date = new Date(time);
-    console.log(date.getHours(), date.getMinutes());
     let hrMin;
     if (date.getHours() === 12) {
       hrMin = `${date.getHours()}:${date.getMinutes()} pm`;
@@ -47,15 +65,13 @@ class ReportedOutagesRow extends React.Component {
 
     return (
       <div className="ReportedOutagesRow">
-        <SearchBar width="40%" />
+        <SearchBar width="40%" onSubmitForm={this.onSearchSubmit} />
         <div className="boltIcon">
           <FontAwesomeIcon icon={faBolt} size="lg" />
         </div>
         <h1 className='outagesTitle'>Reported Outages</h1>
         <div className="outageNotificationWrapper">
-          {this.state.outages.map(report => {
-            return <ReportedOutagesNotifications location={report.city.S} time={this.convertTime(report.time.S)} stateFarmLocation={report.location.S} description={report.description.S} />
-          })}
+          {this.renderOutages()}
         </div>
         <ReportButton />
 

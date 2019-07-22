@@ -8,13 +8,40 @@ import { Link } from 'react-router-dom';
 import { getWeather } from '../../api/weatherapi';
 
 class WeatherUpdatesRow extends React.Component {
-  state = { weatherData: null };
+  state = { weatherData: null, search: null };
 
   componentDidMount() {
     getWeather().then(res => {
       // converts object to array
       this.setState({ weatherData: Object.values(res) });
     })
+  }
+
+  onSearchSubmit = (term) => {
+    this.setState({ search: term });
+  }
+
+  renderWeather() {
+    if (this.state.search === null || this.state.search === '') {
+      return this.state.weatherData.map(location => {
+        return <WeatherUpdateNotifications
+          location={location.locationName}
+          time={this.convertTime()}
+          weatherWarning={location.weather[0].main}
+          description={`OpenWeatherMap has reported ${location.weather[0].description} for the area of ${location.city}`} />
+      })
+    } else {
+      return this.state.weatherData.map(location => {
+        if (location.locationName.toLowerCase().includes(this.state.search.toLowerCase())) {
+          return <WeatherUpdateNotifications
+            location={location.locationName}
+            time={this.convertTime()}
+            weatherWarning={location.weather[0].main}
+            description={`OpenWeatherMap has reported ${location.weather[0].description} for the area of ${location.city}`} />
+        }
+        return false;
+      })
+    }
   }
 
   convertTime = () => {
@@ -39,21 +66,13 @@ class WeatherUpdatesRow extends React.Component {
 
     return (
       <div className="WeatherUpdatesRow">
-        <SearchBar width="40%" />
+        <SearchBar width="40%" onSubmitForm={this.onSearchSubmit} />
         <div className="cloudIcon">
           <FontAwesomeIcon icon={faCloud} size="lg" />
         </div>
         <h1 className="weatherUpdatesTitle">Weather Updates</h1>
         <div className="weatherNotificationWrapper">
-          {this.state.weatherData.map(location => {
-            console.log(location);
-            return <WeatherUpdateNotifications 
-            // location={`${location.city}, ${location.stateAbbr}`}
-            location={location.locationName}
-            time={this.convertTime()} 
-            weatherWarning={location.weather[0].main}
-            description={`OpenWeatherMap has reported ${location.weather[0].description} for the area of ${location.city}`} />
-          })}
+          {this.renderWeather()}
           {/* <WeatherUpdateNotifications location='Phoenix, AZ' time='10:03 am' weatherWarning='Heavy Flooding' description="OpenWeatherMap has reported heavy rain for the area of Phoenix..." />
           <WeatherUpdateNotifications location='Bloomington, IL' time='8:03 am' weatherWarning='Thunderstorms' description="OpenWeatherMap has reported upcoming thunderstorms for the area of Bloomington..." />
           <WeatherUpdateNotifications location='Atlanta, GA' time='8:03 am' weatherWarning='High Winds' description="OpenWeatherMap has reported high winds for the area of Atlanta..." />
