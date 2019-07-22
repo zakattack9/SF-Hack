@@ -1,7 +1,6 @@
 // import Statefarm location builder and SF data array
 import axios from 'axios';
 import { sfLocationData, locationBuilder } from './data.js';
-// import { buildChart } from './chart.js';
 
 const API_KEY = 'ASU3736!984!76';
 
@@ -158,9 +157,16 @@ export function getPowerOutageData() {
           location.status = 'Confirmed Down';
         }
       }
-    
+
+      // creates a power outage for Marina Heights
+      function forceOutage() {
+        sfLocationData[0].powerOutageData.city.OutageCount = 9500;
+        determineRisk(sfLocationData[0]);
+      }
+      // forceOutage();
+
+
       // console.log("SF Location Data", sfLocationData);
-      // buildChart(sfLocationData);
       resolve(sfLocationData);
     }
   })

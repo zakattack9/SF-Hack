@@ -65,7 +65,7 @@
   left: 45%;
   top: 52%;
   transform: translate(-50%, -50%);
-  animation: fade-in 1s ease;
+  animation: fade-in 0.8s ease;
 }
 
 @keyframes fade-in {

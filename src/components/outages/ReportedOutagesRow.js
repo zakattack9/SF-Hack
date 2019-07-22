@@ -75,7 +75,7 @@ class ReportedOutagesRow extends React.Component {
     return (
       <div className="ReportedOutagesRow">
         <SearchBar width="40%" onSubmitForm={this.onSearchSubmit} />
-        <Fade bottom distance={'6px'}>
+        <Fade bottom distance={'7px'}>
           <div className="boltIcon">
             <FontAwesomeIcon icon={faBolt} size="lg" />
           </div>

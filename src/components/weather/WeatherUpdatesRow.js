@@ -68,7 +68,7 @@ class WeatherUpdatesRow extends React.Component {
     return (
       <div className="WeatherUpdatesRow">
         <SearchBar width="40%" onSubmitForm={this.onSearchSubmit} />
-        <Fade bottom distance={'6px'}>
+        <Fade bottom distance={'7px'}>
           <div className="cloudIcon">
             <FontAwesomeIcon icon={faCloud} size="lg" />
           </div>

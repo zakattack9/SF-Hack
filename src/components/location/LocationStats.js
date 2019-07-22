@@ -54,7 +54,7 @@ class LocationStats extends React.Component {
 
   calcPctWithoutPower = () => {
     let percent = this.state.location.powerOutageData.city.OutageCount / this.state.location.powerOutageData.city.TrackedCount;
-    return Math.ceil(percent);
+    return Math.ceil(percent * 100);
   }
 
   render() {
