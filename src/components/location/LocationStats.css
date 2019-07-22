@@ -13,6 +13,13 @@
   transform: translate(-50%, 0%);
 }
 
+.LocationStatsWrapper .searchErr {
+  font-size: 0.9em;
+  position: absolute;
+  top: 9%;
+  color: rgb(255, 105, 105);
+}
+
 .LocationStatsWrapper .stats {
   width: 50%;
   display: inline-block;

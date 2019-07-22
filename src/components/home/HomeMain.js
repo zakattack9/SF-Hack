@@ -10,10 +10,14 @@ class HomeMain extends React.Component {
   state = { location: null, redirect: false };
 
   onSearchSubmit = (term) => {
-    let locationObj = sfLocationData.find(location => {
-      return location.locationName.toLowerCase().includes(term.toLowerCase());
-    })
-    this.setState({ location: locationObj, redirect: true })
+    if (term !== '') {
+      let locationObj = sfLocationData.find(location => {
+        return location.locationName.toLowerCase().includes(term.toLowerCase());
+      })
+      if (locationObj !== undefined) {
+        this.setState({ location: locationObj, redirect: true })
+      }
+    }
   }
 
   render() {

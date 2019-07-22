@@ -8,13 +8,26 @@ import { faBolt, faHome, faCloud } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 class LocationStats extends React.Component {
-  state = { location: this.props.location.state.location, sfLocationData: this.props.location.state.sfLocationData };
+  state = {
+    location: this.props.location.state.location,
+    sfLocationData: this.props.location.state.sfLocationData,
+    errMsg: ''
+  };
 
-  onSearchSubmit = (term) => {    
-    let locationObj = this.state.sfLocationData.find(location => {
-      return location.locationName.toLowerCase().includes(term.toLowerCase());
-    })
-    this.setState({ location: locationObj })
+  onSearchSubmit = (term) => {
+    if (term !== '') {
+      let locationObj = this.state.sfLocationData.find(location => {
+        return location.locationName.toLowerCase().includes(term.toLowerCase());
+      })
+      if (locationObj !== undefined) {
+        this.setState({ location: locationObj, redirect: true });
+        this.setState({ errMsg: '' });
+      } else {
+        this.setState({ errMsg: 'Location not found, please search for another location' });
+      }
+    } else {
+      this.setState({ errMsg: 'Please enter a location to search for' });
+    }
   }
 
   getStatusColor = () => {
@@ -47,6 +60,7 @@ class LocationStats extends React.Component {
     return (
       <div className="LocationStatsWrapper">
         <SearchBar width="100%" onSubmitForm={this.onSearchSubmit} />
+        <div className="searchErr">{this.state.errMsg}</div>
         <div className="stats">
           <div className="locationInfo">
             <div className="county">{this.state.location.county} County</div>
