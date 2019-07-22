@@ -14,7 +14,7 @@ class ReportedOutagesRow extends React.Component {
   componentDidMount() {
     axios.get('https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/get')
       .then(res => {
-        let outages = res.data.Items.sort(function(a,b){
+        let outages = res.data.Items.sort(function (a, b) {
           return new Date(b.time.S) - new Date(a.time.S);
         });
         this.setState({ outages });
@@ -30,13 +30,23 @@ class ReportedOutagesRow extends React.Component {
 
   renderOutages() {
     if (this.state.search === null || this.state.search === '') {
-      return this.state.outages.map(report => {
-        return <ReportedOutagesNotifications location={report.city.S} time={this.convertTime(report.time.S)} stateFarmLocation={report.location.S} description={report.description.S} />
+      return this.state.outages.map((report, i) => {
+        return <ReportedOutagesNotifications
+          key={i}
+          location={report.city.S}
+          time={this.convertTime(report.time.S)}
+          stateFarmLocation={report.location.S}
+          description={report.description.S} />
       })
     } else {
-      return this.state.outages.map(report => {
+      return this.state.outages.map((report, i) => {
         if (report.location.S.toLowerCase().includes(this.state.search.toLowerCase())) {
-          return <ReportedOutagesNotifications location={report.city.S} time={this.convertTime(report.time.S)} stateFarmLocation={report.location.S} description={report.description.S} />
+          return <ReportedOutagesNotifications
+            key={i}
+            location={report.city.S}
+            time={this.convertTime(report.time.S)}
+            stateFarmLocation={report.location.S}
+            description={report.description.S} />
         }
         return false;
       })

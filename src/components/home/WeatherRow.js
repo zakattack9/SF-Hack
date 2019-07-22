@@ -45,8 +45,9 @@ class WeatherRow extends React.Component {
           </div>
         </div>
         <div className="weatherWrapper">
-          {this.state.weatherData.map(location => {
+          {this.state.weatherData.map((location, i) => {
             return <SideNotification
+              key={i}
               location={location.locationName}
               time={this.convertTime()}
               title={location.weather[0].main}

@@ -51,8 +51,13 @@ class OutageRow extends React.Component {
           </div>
         </div>
         <div className="outagesWrapper">
-          {this.state.outages.map(report => {
-            return <SideNotification location={report.city.S} time={this.convertTime(report.time.S)} title={report.location.S} description={report.description.S} />
+          {this.state.outages.map((report, i) => {
+            return <SideNotification
+              key={i}
+              location={report.city.S}
+              time={this.convertTime(report.time.S)}
+              title={report.location.S}
+              description={report.description.S} />
           })}
         </div>
 

@@ -23,17 +23,19 @@ class WeatherUpdatesRow extends React.Component {
 
   renderWeather() {
     if (this.state.search === null || this.state.search === '') {
-      return this.state.weatherData.map(location => {
+      return this.state.weatherData.map((location, i) => {
         return <WeatherUpdateNotifications
+          key={i}
           location={location.locationName}
           time={this.convertTime()}
           weatherWarning={location.weather[0].main}
           description={`OpenWeatherMap has reported ${location.weather[0].description} for the area of ${location.city}`} />
       })
     } else {
-      return this.state.weatherData.map(location => {
+      return this.state.weatherData.map((location, i) => {
         if (location.locationName.toLowerCase().includes(this.state.search.toLowerCase())) {
           return <WeatherUpdateNotifications
+            key={i}
             location={location.locationName}
             time={this.convertTime()}
             weatherWarning={location.weather[0].main}

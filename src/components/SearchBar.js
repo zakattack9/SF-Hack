@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
           style={searchBarStyle}
           className="searchBar"
           value={this.state.term}
-          placeholder="Search"
+          placeholder="Search by location"
           onChange={(e) => this.setState({ term: e.target.value })}></input>
       </form>
     );

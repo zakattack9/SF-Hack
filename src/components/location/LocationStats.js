@@ -70,26 +70,28 @@ class LocationStats extends React.Component {
 
           <div className="locationData">
             <table>
-              <tr>
-                <td>Status:</td>
-                <td style={this.getStatusColor()}>{this.state.location.status}</td>
-              </tr>
-              <tr>
-                <td>Power Outage Risk:</td>
-                <td style={this.getRiskColor()}>{this.state.location.risk}</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>{this.state.location.type}</td>
-              </tr>
-              <tr>
-                <td>Reported Outages:</td>
-                <td>{this.state.location.reports.length}</td>
-              </tr>
-              <tr>
-                <td>Last Updated:</td>
-                <td>{this.state.location.lastUpdated}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>Status:</td>
+                  <td style={this.getStatusColor()}>{this.state.location.status}</td>
+                </tr>
+                <tr>
+                  <td>Power Outage Risk:</td>
+                  <td style={this.getRiskColor()}>{this.state.location.risk}</td>
+                </tr>
+                <tr>
+                  <td>Type:</td>
+                  <td>{this.state.location.type}</td>
+                </tr>
+                <tr>
+                  <td>Reported Outages:</td>
+                  <td>{this.state.location.reports.length}</td>
+                </tr>
+                <tr>
+                  <td>Last Updated:</td>
+                  <td>{this.state.location.lastUpdated}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
 
@@ -97,9 +99,10 @@ class LocationStats extends React.Component {
 
           <div className="powerOutageData">
             <div className="powerOutageTitle">Power Outage Tracking</div>
+            
+            <div className="category">State</div>
             <table>
               <tbody>
-                <div className="category">State</div>
                 <tr>
                   <td>Population Tracked:</td>
                   <td>{this.state.location.powerOutageData.state.TrackedCount}</td>
@@ -108,7 +111,12 @@ class LocationStats extends React.Component {
                   <td>Outages:</td>
                   <td>{this.state.location.powerOutageData.state.OutageCount}</td>
                 </tr>
-                <div className="category">County</div>
+              </tbody>
+            </table>
+
+            <div className="category">County</div>
+            <table>
+              <tbody>
                 <tr>
                   <td>Population Tracked:</td>
                   <td>{this.state.location.powerOutageData.county.TrackedCount}</td>
@@ -117,7 +125,12 @@ class LocationStats extends React.Component {
                   <td>Outages:</td>
                   <td>{this.state.location.powerOutageData.county.OutageCount}</td>
                 </tr>
-                <div className="category">City</div>
+              </tbody>
+            </table>
+
+            <div className="category">City</div>
+            <table>
+              <tbody>
                 <tr>
                   <td>Population Tracked:</td>
                   <td>{this.state.location.powerOutageData.city.TrackedCount}</td>
@@ -128,6 +141,7 @@ class LocationStats extends React.Component {
                 </tr>
               </tbody>
             </table>
+            
           </div>
 
           <ReportButton />
