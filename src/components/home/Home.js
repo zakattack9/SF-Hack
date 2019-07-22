@@ -3,9 +3,6 @@ import './Home.css';
 import HomeMain from './HomeMain';
 import WeatherRow from './WeatherRow';
 import OutageRow from './OutageRow';
-// import ReportedOutagesRow from './components/ReportedOutagesRow';
-// import LocationStats from './components/LocationStats';
-
 
 class App extends React.Component {
   state = { selectedNode: null };
@@ -19,9 +16,6 @@ class App extends React.Component {
           <WeatherRow />
           <OutageRow />
         </div>
-        
-        {/* <ReportedOutagesRow/> */}
-        {/* <LocationStats /> */}
       </div>
     );
   }

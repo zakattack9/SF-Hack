@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Fade from 'react-reveal/Fade';
 
 class OutageRow extends React.Component {
   state = { outages: null }
@@ -39,7 +40,21 @@ class OutageRow extends React.Component {
 
   render() {
     if (this.state.outages === null) {
-      return <div className="OutageRow"></div>
+      return (
+        <div className="OutageRow">
+          {/* <Fade bottom distance={'8px'} delay={50}> */}
+            <div className="titleWrapper">
+              <h1 className='mainTitle'>Reported<br />Outages</h1>
+              <div className="boltIcon">
+                <FontAwesomeIcon icon={faBolt} size="lg" />
+              </div>
+            </div>
+          {/* </Fade> */}
+          <div className="outagesWrapper">
+            <div className="lds-ripple"><div></div><div></div></div>
+          </div>
+        </div>
+      );
     }
 
     return (
@@ -54,6 +69,7 @@ class OutageRow extends React.Component {
           {this.state.outages.map((report, i) => {
             return <SideNotification
               key={i}
+              delay={i * 100}
               location={report.city.S}
               time={this.convertTime(report.time.S)}
               title={report.location.S}
@@ -61,15 +77,13 @@ class OutageRow extends React.Component {
           })}
         </div>
 
-        {/* <SideNotification location="Tempe, AZ" time='2:05 pm' title='Marina Heights' description='All systems and servers have gone down due to a power outage' />
-        <SideNotification location="Dallas, TX" time='2:05 pm' title='Dallas Hub' description='All systems and servers have gone down due to a power outage' />
-        <SideNotification location="Atlanta, GA" time='2:05 pm' title='Atlanta Hub' description='All systems and servers have gone down due to a power outage' /> */}
-
-        <div className="viewAll">
-          <Link to="/outages">
-            View All
+        <Fade bottom distance={'8px'} delay={300}>
+          <div className="viewAll">
+            <Link to="/outages">
+              View All
           </Link>
-        </div>
+          </div>
+        </Fade>
       </div>
     )
   }

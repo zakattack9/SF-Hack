@@ -155,6 +155,10 @@ class BubbleChart extends React.Component {
       }} />
     }
 
+    if (this.state.sfLocationData === null) {
+      return <div className="lds-ripple"><div></div><div></div></div>
+    } 
+
     return <div className="BubbleChart"></div>;
   };
 }

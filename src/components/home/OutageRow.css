@@ -1,7 +1,7 @@
 .OutageRow {
   height: 50%;
   padding-right: 3em;
-  padding-top: 1em;
+  /* padding-top: 1em; */
   box-sizing: border-box;
 }
 
@@ -36,6 +36,16 @@
 }
 
 .OutageRow .viewAll {
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 
+/* loader for reported outages */
+.outagesWrapper .lds-ripple {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+}

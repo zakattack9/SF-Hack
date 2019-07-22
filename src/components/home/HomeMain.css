@@ -54,9 +54,27 @@
   /* top: 5%; */
 }
 
+.HomeMain .errMsg {
+  position: absolute;
+  top: 9%;
+  left: 6%;
+}
+
 .BubbleChart {
   position: absolute;
   left: 45%;
   top: 52%;
   transform: translate(-50%, -50%);
+  animation: fade-in 1s ease;
+}
+
+@keyframes fade-in {
+  0% {
+    top: 53%;
+    opacity: 0;
+  }
+  100% {
+    top: 52%;
+    opacity: 1;
+  }
 }

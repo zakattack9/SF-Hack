@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
 
 const btnStyle = {
   fontSize: '0.7em',
@@ -16,7 +17,13 @@ const btnStyle = {
 };
 
 const ReportButton = () => {
-  return <Link to="/report"><div style={btnStyle} className="reportBtn">Report +</div></Link>;
+  return (
+    <Link to="/report">
+      <Fade bottom distance={'10px'} delay={200}>
+        <div style={btnStyle} className="reportBtn">Report +</div>
+      </Fade>
+    </Link>
+  );
 }
 
 export default ReportButton;

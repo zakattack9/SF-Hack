@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCaretRight, faBolt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Fade from 'react-reveal/Fade';
 
 class ReportedOutagesRow extends React.Component {
   state = { outages: null, search: null }
@@ -29,7 +30,9 @@ class ReportedOutagesRow extends React.Component {
   }
 
   renderOutages() {
-    if (this.state.search === null || this.state.search === '') {
+    if (this.state.outages === null) {
+      return <div className="lds-ripple"><div></div><div></div></div>;
+    } else if (this.state.search === null || this.state.search === '') {
       return this.state.outages.map((report, i) => {
         return <ReportedOutagesNotifications
           key={i}
@@ -69,36 +72,36 @@ class ReportedOutagesRow extends React.Component {
   }
 
   render() {
-    if (this.state.outages === null) {
-      return (<div className="ReportedOutagesRow"></div>);
-    }
-
     return (
       <div className="ReportedOutagesRow">
         <SearchBar width="40%" onSubmitForm={this.onSearchSubmit} />
-        <div className="boltIcon">
-          <FontAwesomeIcon icon={faBolt} size="lg" />
-        </div>
-        <h1 className='outagesTitle'>Reported Outages</h1>
+        <Fade bottom distance={'6px'}>
+          <div className="boltIcon">
+            <FontAwesomeIcon icon={faBolt} size="lg" />
+          </div>
+          <h1 className='outagesTitle'>Reported Outages</h1>
+        </Fade>
         <div className="outageNotificationWrapper">
           {this.renderOutages()}
         </div>
         <ReportButton />
 
-        <div className="outagesNav">
-          <div className="homeIcon">
-            <Link to='/'>
-              <FontAwesomeIcon icon={faHome} size="lg" />
-            </Link>
-          </div>
+        <Fade right distance={'10px'}>
+          <div className="outagesNav">
+            <div className="homeIcon">
+              <Link to='/'>
+                <FontAwesomeIcon icon={faHome} size="lg" />
+              </Link>
+            </div>
 
-          <div className="arrowWrapper">
-            <Link to='/weather'>
-              <div className="arrowText">Weather<br />Updates</div>
-              <FontAwesomeIcon className="arrowIcon" icon={faCaretRight} size="2x" />
-            </Link>
+            <div className="arrowWrapper">
+              <Link to='/weather'>
+                <div className="arrowText">Weather<br />Updates</div>
+                <FontAwesomeIcon className="arrowIcon" icon={faCaretRight} size="2x" />
+              </Link>
+            </div>
           </div>
-        </div>
+        </Fade>
       </div>
     )
   }

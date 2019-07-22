@@ -5,24 +5,25 @@ import { faBolt, faHome, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { Link, Redirect } from 'react-router-dom';
 import { sfLocationData } from '../../api/data';
 import axios from 'axios';
+import Fade from 'react-reveal/Fade';
 
 class ReportOutage extends React.Component {
-  state = { 
+  state = {
     location: 'Tempe, AZ:Marina Heights',
     description: null,
     redirect: false,
-    errMsg: '' 
+    errMsg: ''
   };
 
   handleSubmit = event => {
     event.preventDefault();
     if (this.state.description === null) {
-      this.setState({errMsg: 'Please provide the cause of the power outage'})
+      this.setState({ errMsg: 'Please provide the cause of the power outage' })
     } else {
       // need to add code to compensate for time differences
       let cityState = this.state.location.split(":")[0];
       let sfLocation = this.state.location.split(":")[1];
-  
+
       axios({
         url: 'https://gebef0w3d8.execute-api.us-west-2.amazonaws.com/dev/report',
         method: 'post',
@@ -53,24 +54,32 @@ class ReportOutage extends React.Component {
       <div className="ReportOutage">
         <div className="reportWrapper">
           <form onSubmit={this.handleSubmit}>
-            <div className="reportIcon">
-              <FontAwesomeIcon icon={faBolt} size="lg" />
-            </div>
-            <h1 className='reportTitle'>Report an Outage</h1>
+            <Fade bottom distance={'8px'}>
+              <div className="reportIcon">
+                <FontAwesomeIcon icon={faBolt} size="lg" />
+              </div>
+              <h1 className='reportTitle'>Report an Outage</h1>
+            </Fade>
 
-            <div className="fieldTitle">Location</div>
-            <select className="locationSelect" onChange={(e) => this.setState({ location: e.target.value })}>
-              {sfLocationData.map((location, i) => {
-                let cityState = `${location.city}, ${location.abbrState}:${location.locationName}`;
-                return <option key={i} value={cityState}>{location.locationName}</option>
-              })}
-            </select>
+            <Fade bottom distance={'8px'} delay={200}>
+              <div className="fieldTitle">Location</div>
+              <select className="locationSelect" onChange={(e) => this.setState({ location: e.target.value })}>
+                {sfLocationData.map((location, i) => {
+                  let cityState = `${location.city}, ${location.abbrState}:${location.locationName}`;
+                  return <option key={i} value={cityState}>{location.locationName}</option>
+                })}
+              </select>
+            </Fade>
 
-            <div className="fieldTitle">Cause of Outage</div>
-            <textarea className="descriptionField" onChange={(e) => this.setState({ description: e.target.value })}></textarea>
-            <div className="errMsg">{this.state.errMsg}</div>
+            <Fade bottom distance={'8px'} delay={300}>
+              <div className="fieldTitle">Cause of Outage</div>
+              <textarea className="descriptionField" onChange={(e) => this.setState({ description: e.target.value })}></textarea>
+              <div className="errMsg">{this.state.errMsg}</div>
+            </Fade>
 
-            <input type="submit" value="Report" className="sendReportBtn"></input>
+            <Fade bottom distance={'8px'} delay={400}>
+              <input type="submit" value="Report" className="sendReportBtn"></input>
+            </Fade>
           </form>
         </div>
 

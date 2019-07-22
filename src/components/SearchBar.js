@@ -15,10 +15,10 @@ class SearchBar extends React.Component {
     const searchBarStyle = {
       width: this.props.width,
       fontSize: '0.8em',
-      fontWeight: '500',
+      fontWeight: '400',
       backgroundColor: '#2D2D2D',
       color: '#808080',
-      letterSpacing: '-0.03em',
+      // letterSpacing: '-0.03em',
       outline: 'none',
       border: 'none',
       borderRadius: '100px 100px 100px 100px',

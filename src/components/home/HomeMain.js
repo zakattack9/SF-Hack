@@ -5,9 +5,10 @@ import BubbleChart from './BubbleChart';
 import './HomeMain.css';
 import { sfLocationData } from '../../api/data';
 import { Redirect, withRouter } from 'react-router-dom';
+import Fade from 'react-reveal/Fade';
 
 class HomeMain extends React.Component {
-  state = { location: null, redirect: false };
+  state = { location: null, redirect: false, errMsg: '' };
 
   onSearchSubmit = (term) => {
     if (term !== '') {
@@ -15,8 +16,13 @@ class HomeMain extends React.Component {
         return location.locationName.toLowerCase().includes(term.toLowerCase());
       })
       if (locationObj !== undefined) {
-        this.setState({ location: locationObj, redirect: true })
+        this.setState({ location: locationObj, redirect: true });
+        this.setState({ errMsg: '' });
+      } else {
+        this.setState({ errMsg: 'Location not found, please search for another location' });
       }
+    } else {
+      this.setState({ errMsg: 'Please enter a location to search for' });
     }
   }
 
@@ -31,20 +37,26 @@ class HomeMain extends React.Component {
 
     return (
       <div className='HomeMain'>
-        <SearchBar width="35%" onSubmitForm={this.onSearchSubmit} />
+        <Fade bottom distance={'10px'} delay={150}>
+          <SearchBar width="35%" onSubmitForm={this.onSearchSubmit} />
+        </Fade>
+        <div className="errMsg">{this.state.errMsg}</div>
         <ReportButton />
         <BubbleChart />
-        <div className="outageRisk">
-          <span className="title">
-            Power<br />
-            Outage<br />
-            Risk<br />
-          </span>
-          <span className="riskNone">None<br /></span>
-          <span className="riskLow">Low<br /></span>
-          <span className="riskMedium">Medium<br /></span>
-          <span className="riskHigh">High<br /></span>
-        </div>
+
+        <Fade bottom distance={'10px'} delay={150}>
+          <div className="outageRisk">
+            <span className="title">
+              Power<br />
+              Outage<br />
+              Risk<br />
+            </span>
+            <span className="riskNone">None<br /></span>
+            <span className="riskLow">Low<br /></span>
+            <span className="riskMedium">Medium<br /></span>
+            <span className="riskHigh">High<br /></span>
+          </div>
+        </Fade>
       </div>
     )
   }

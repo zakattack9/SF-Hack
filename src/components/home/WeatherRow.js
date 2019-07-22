@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloud } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { getWeather } from '../../api/weatherapi';
+import Fade from 'react-reveal/Fade';
 
 class WeatherRow extends React.Component {
   state = { weatherData: null };
@@ -33,7 +34,21 @@ class WeatherRow extends React.Component {
 
   render() {
     if (this.state.weatherData === null) {
-      return <div className="WeatherRow"></div>;
+      return (
+        <div className="WeatherRow">
+          {/* <Fade bottom distance={'8px'} delay={50}> */}
+            <div className="titleWrapper">
+              <h1 className='mainTitle'>Weather<br />Updates</h1>
+              <div className="cloudIcon">
+                <FontAwesomeIcon icon={faCloud} size="lg" />
+              </div>
+            </div>
+          {/* </Fade> */}
+          <div className="weatherWrapper">
+            <div className="lds-ripple"><div></div><div></div></div>
+          </div>
+        </div>
+      );
     }
 
     return (
@@ -48,6 +63,7 @@ class WeatherRow extends React.Component {
           {this.state.weatherData.map((location, i) => {
             return <SideNotification
               key={i}
+              delay={i * 100}
               location={location.locationName}
               time={this.convertTime()}
               title={location.weather[0].main}
@@ -55,16 +71,17 @@ class WeatherRow extends React.Component {
           })}
         </div>
 
-        {/* <SideNotification location="Phoenix, AZ" time='2:05 pm' title='Heavy Flooding' description='OpenWeatherMap has reported heavy rain for the area of Phoenix' />
-        <SideNotification location="Tempe, AZ" time='8:03 pm' title='Heavy Flooding' description='OpenWeatherMap has reported heavy rain for the area of Phoenix' />
-        <SideNotification location="Bloomington, IL" time='5:30 am' title='Strong Winds' description='OpenWeatherMap has reported strong winds for the area of Bloomington' /> */}
-
-        <div className="viewAll">
-          <Link to="/weather">
-            View All
+        <Fade bottom distance={'8px'} delay={300}>
+          <div className="viewAll">
+            <Link to="/weather">
+              View All
           </Link>
-        </div>
-        <hr />
+          </div>
+        </Fade>
+
+        <Fade bottom distance={'5px'}>
+          <hr />
+        </Fade>
       </div>
     )
   }
