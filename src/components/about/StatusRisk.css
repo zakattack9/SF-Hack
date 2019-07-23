@@ -1,0 +1,25 @@
+.StatusRisk {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.riskStatusWrapper {
+  font-weight: bold;
+  line-height: 1.3em;
+}
+
+.riskStatusWrapper > .risk {
+  color: #8F8F8F;
+  font-size: 1.5em;
+}
+
+.riskStatusWrapper > .status {
+  color: #636363;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.StatusRisk > .desc {
+  margin-top: 0.5em;
+  margin-bottom: 3em;
+}

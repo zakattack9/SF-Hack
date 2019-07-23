@@ -16,7 +16,7 @@ const SideNotification = props => {
         <div className='description'>{props.description}</div>
       </Fade>
     </div>
-  )
+  );
 }
 
 export default SideNotification;

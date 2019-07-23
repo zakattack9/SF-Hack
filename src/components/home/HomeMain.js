@@ -4,7 +4,7 @@ import SearchBar from '../SearchBar';
 import BubbleChart from './BubbleChart';
 import './HomeMain.css';
 import { sfLocationData } from '../../api/data';
-import { Redirect, withRouter } from 'react-router-dom';
+import { Link, Redirect, withRouter } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
 class HomeMain extends React.Component {
@@ -45,17 +45,19 @@ class HomeMain extends React.Component {
         <BubbleChart />
 
         <Fade bottom distance={'10px'} delay={150}>
-          <div className="outageRisk">
-            <span className="title">
-              Power<br />
-              Outage<br />
-              Risk<br />
-            </span>
-            <span className="riskNone">None<br /></span>
-            <span className="riskLow">Low<br /></span>
-            <span className="riskMedium">Medium<br /></span>
-            <span className="riskHigh">High<br /></span>
-          </div>
+          <Link to='/about'>
+            <div className="outageRisk">
+              <span className="title">
+                Power<br />
+                Outage<br />
+                Risk<br />
+              </span>
+              <span className="riskNone">None<br /></span>
+              <span className="riskLow">Low<br /></span>
+              <span className="riskMedium">Medium<br /></span>
+              <span className="riskHigh">High<br /></span>
+            </div>
+          </Link>
         </Fade>
       </div>
     )
