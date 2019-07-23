@@ -19,7 +19,7 @@ const btnStyle = {
 const ReportButton = () => {
   return (
     <Link to="/report">
-      <Fade bottom distance={'10px'} delay={200}>
+      <Fade bottom distance={'10px'} delay={250}>
         <div style={btnStyle} className="reportBtn">Report +</div>
       </Fade>
     </Link>

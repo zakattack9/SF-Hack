@@ -43,12 +43,12 @@ class OutageRow extends React.Component {
       return (
         <div className="OutageRow">
           {/* <Fade bottom distance={'8px'} delay={50}> */}
-            <div className="titleWrapper">
-              <h1 className='mainTitle'>Reported<br />Outages</h1>
-              <div className="boltIcon">
-                <FontAwesomeIcon icon={faBolt} size="lg" />
-              </div>
+          <div className="titleWrapper">
+            <h1 className='mainTitle'>Reported<br />Outages</h1>
+            <div className="boltIcon">
+              <FontAwesomeIcon icon={faBolt} size="lg" />
             </div>
+          </div>
           {/* </Fade> */}
           <div className="outagesWrapper">
             <div className="lds-ripple"><div></div><div></div></div>
@@ -59,12 +59,14 @@ class OutageRow extends React.Component {
 
     return (
       <div className="OutageRow">
-        <div className="titleWrapper">
-          <h1 className='mainTitle'>Reported<br />Outages</h1>
-          <div className="boltIcon">
-            <FontAwesomeIcon icon={faBolt} size="lg" />
+        <Link to='/outages'>
+          <div className="titleWrapper">
+            <h1 className='mainTitle'>Reported<br />Outages</h1>
+            <div className="boltIcon">
+              <FontAwesomeIcon icon={faBolt} size="lg" />
+            </div>
           </div>
-        </div>
+        </Link>
         <div className="outagesWrapper">
           {this.state.outages.map((report, i) => {
             return <SideNotification

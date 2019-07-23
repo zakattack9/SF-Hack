@@ -37,12 +37,12 @@ class WeatherRow extends React.Component {
       return (
         <div className="WeatherRow">
           {/* <Fade bottom distance={'8px'} delay={50}> */}
-            <div className="titleWrapper">
-              <h1 className='mainTitle'>Weather<br />Updates</h1>
-              <div className="cloudIcon">
-                <FontAwesomeIcon icon={faCloud} size="lg" />
-              </div>
+          <div className="titleWrapper">
+            <h1 className='mainTitle'>Weather<br />Updates</h1>
+            <div className="cloudIcon">
+              <FontAwesomeIcon icon={faCloud} size="lg" />
             </div>
+          </div>
           {/* </Fade> */}
           <div className="weatherWrapper">
             <div className="lds-ripple"><div></div><div></div></div>
@@ -53,12 +53,14 @@ class WeatherRow extends React.Component {
 
     return (
       <div className="WeatherRow">
-        <div className="titleWrapper">
-          <h1 className='mainTitle'>Weather<br />Updates</h1>
-          <div className="cloudIcon">
-            <FontAwesomeIcon icon={faCloud} size="lg" />
+        <Link to='/weather'>
+          <div className="titleWrapper">
+            <h1 className='mainTitle'>Weather<br />Updates</h1>
+            <div className="cloudIcon">
+              <FontAwesomeIcon icon={faCloud} size="lg" />
+            </div>
           </div>
-        </div>
+        </Link>
         <div className="weatherWrapper">
           {this.state.weatherData.map((location, i) => {
             return <SideNotification
