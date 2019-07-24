@@ -58,15 +58,16 @@ class ReportedOutagesRow extends React.Component {
 
   convertTime = (time) => {
     let date = new Date(time);
+    let minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
     let hrMin;
     if (date.getHours() === 12) {
-      hrMin = `${date.getHours()}:${date.getMinutes()} pm`;
+      hrMin = `${date.getHours()}:${minutes} pm`;
     } else if (date.getHours() === 24) {
-      hrMin = `${date.getHours() - 12}:${date.getMinutes()} am`;
+      hrMin = `${date.getHours() - 12}:${minutes} am`;
     } else if (date.getHours() > 12) {
-      hrMin = `${date.getHours() - 12}:${date.getMinutes()} pm`;
+      hrMin = `${date.getHours() - 12}:${minutes} pm`;
     } else {
-      hrMin = `${date.getHours()}:${date.getMinutes()} am`;
+      hrMin = `${date.getHours()}:${minutes} am`;
     }
     return hrMin;
   }
