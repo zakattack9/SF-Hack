@@ -2,6 +2,10 @@
 import axios from 'axios';
 import { sfLocationData, locationBuilder } from './data.js';
 
+// import mock data
+import { mockData } from './mockData.js';
+let USE_MOCK_DATA = true;
+
 const API_KEY = 'ASU3736!984!76';
 
 // States, Counties, Cities to pull power outage data from
@@ -19,6 +23,8 @@ let outageReports;
 // gets data from PowerOutageAPI
 export function getPowerOutageData() {
   return new Promise((resolve, reject) => {
+    if (USE_MOCK_DATA) { resolve(mockData) };
+
     // filters queried power outage data to include only SF related data
     function filterOutageData(allData, filterData, filterParam) {
       return allData.filter(data => {
@@ -172,4 +178,4 @@ export function getPowerOutageData() {
   })
 }
 
-// DynamoDB should clear out old user reports that expire after 6 hours or less
+// DynamoDB should clear out old user reports that expire after 6 hours or less using TTL
